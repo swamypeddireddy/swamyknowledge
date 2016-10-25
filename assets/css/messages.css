@@ -1,0 +1,80 @@
+/*
+    FileType        :.css
+    FileLocation    : http://www.connectkarma/assets/css/messages.css
+    Project         : ConnectKarma
+    Created By      : Vivek Ausekar
+
+    Created on : 12 Oct, 2016, 11:18:57 AM
+    Author     : fiables
+*/
+.messages {
+    width: 100%;
+    display:none;
+}
+body {
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size:13px;
+}
+.info, .success, .warning, .error, .validation {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding:15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    display:none;
+}
+.info {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url('info.png');
+}
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image:url('success.png');
+}
+.warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url('warning.png');
+}
+.error {
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('error.png');
+}
+
+.messagesphp {
+    width: 100%;
+}
+body {
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size:13px;
+}
+.infophp, .successphp, .warningphp, .errorphp, .validationphp {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding:15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+.infophp {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url('info.png');
+}
+.successphp {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image:url('success.png');
+}
+.warningphp {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url('warning.png');
+}
+.errorphp {
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('error.png');
+}
