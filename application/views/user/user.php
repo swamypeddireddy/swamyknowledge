@@ -15,24 +15,7 @@
         </div>
     <?php } ?>
 
-    <div class="referel-messages">
-        <div class="main">
-            <div class="referel">
-                <span class="referel_img"><img src="<?php echo base_url('/assets/'); ?>images/3.png" alt="smily" title="Referrel Received"/> <b class="ref_num">2500</b></span>
-                <span class="referel_img"><img src="<?php echo base_url('/assets/'); ?>images/1.png" alt="surprise" title="Referrel Given"/> <b class="ref_num">2500</b></span>
-                <span class="referel_img"><img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad" title="Referrel not Given"/> <b class="ref_num">2500</b></span>
-            </div>
-
-            <div class="knw_hub"><input type="search" name="" value="" placeholder="Knowldge Hug Search ... "/><i class="fa fa-search khub_search" aria-hidden="true"></i></div>
-
-            <div class="message">
-                <span class="msg_img"><img src="<?php echo base_url('/assets/'); ?>images/business-done.png" alt="business-done"/> <b class="msg_num">1500</b></span>
-                <span class="msg_img"><a href="emails.html"><img src="<?php echo base_url('/assets/'); ?>images/referrelreceive.png" alt="referrelreceive"/> <b class="msg_num">1500</b></a></span>
-                <span class="msg_img"><a href="emails.html"><img src="<?php echo base_url('/assets/'); ?>images/referrelgiven.png" alt="referrelgiven"/> <b class="msg_num">1500</b></a></span>
-                <span class="msg_img"><a href="feedback.html"><i class="fa fa-file-text" aria-hidden="true"></i></a></span>
-            </div>
-        </div>
-    </div>
+ 
 
     <div class="user-information">
         <div class="main">

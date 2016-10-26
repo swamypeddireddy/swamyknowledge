@@ -137,7 +137,7 @@ class User extends CI_Controller {
                 $queryInsertSocialMediaLogin    = ;*/
             } else {
 
-                $arrayWhere     = array('firstname' => $_POST['firstname'], 'password' => base64_encode(base64_encode($_POST['password'])));
+                $arrayWhere     = array('firstname' => $_POST['firstname'], 'password' => md5($_POST['password']));
                 $queryResult    = $this->db->select('*')->from('user_registrations')->where($arrayWhere)->get();
                 $queryNumRows   = $queryResult->num_rows();
                 $queryRowArray  = $queryResult->row_array();
