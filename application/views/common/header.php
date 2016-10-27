@@ -75,12 +75,46 @@
                 <span class="referel_img"><img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad" title="Referrel not Given"/> <b class="ref_num">2500</b></span>
             </div>
 
-            <div class="knw_hub"><input type="search" name="" value="" placeholder="Knowldge Hug Search ... "/><i class="fa fa-search khub_search" aria-hidden="true"></i></div>
+            <div class="knw_hub">
+                <form method="post" action="<?php echo base_url().'ckhub/'; ?>">
+                <input type="search" name="title" value="<?php if(isset($chubsearch)){ echo $chubsearch; } ?>" placeholder="Knowldge Hug Search ... "/>
+            
+                
+                <div class="submit-container">
+					<input name="hubsearch" value="" class="searchsubmit" type="submit">
+				</div>
+             
+                
+               
+                </form>
+            </div>
 
             <div class="message">
+                <?php        
+                 $iduser=$this->session->userdata('session_userId');
+       $askcountresult=array();
+         $this->db->select('count(idbusinessask) as askcount');
+        $this->db->from('ck_businessask');
+         $this->db->where('status', 1);
+            $this->db->where('createdby', $iduser);     
+         $res = $this->db->get();
+         if ($res && $res->num_rows() > 0) {
+       $askcountresult=$res->row();
+         }
+         
+          $givecountresult=array();
+         $this->db->select('count(idbusinessgive) as givecount');
+        $this->db->from('ck_businessgive');
+         $this->db->where('status', 1);
+            $this->db->where('createdby', $iduser);     
+         $res = $this->db->get();
+          if ($res && $res->num_rows() > 0) {
+       $givecountresult=$res->row();
+         }
+                ?>
                 <span class="msg_img"><img src="<?php echo base_url('/assets/'); ?>images/business-done.png" alt="business-done"/> <b class="msg_num">1500</b></span>
-                <span class="msg_img"><a href="emails.html"><img src="<?php echo base_url('/assets/'); ?>images/referrelreceive.png" alt="referrelreceive"/> <b class="msg_num">1500</b></a></span>
-                <span class="msg_img"><a href="emails.html"><img src="<?php echo base_url('/assets/'); ?>images/referrelgiven.png" alt="referrelgiven"/> <b class="msg_num">1500</b></a></span>
+                <span class="msg_img"><a href="emails.html"><img src="<?php echo base_url('/assets/'); ?>images/referrelreceive.png" alt="referrelreceive"/> <b class="msg_num"><?php if(count($askcountresult)>0){ echo $askcountresult->askcount; } else{ echo 0; } ?></b></a></span>
+                <span class="msg_img"><a href="emails.html"><img src="<?php echo base_url('/assets/'); ?>images/referrelgiven.png" alt="referrelgiven"/> <b class="msg_num"><?php if(count($givecountresult)>0){ echo $givecountresult->givecount; } else{ echo 0; } ?></b></a></span>
                 <span class="msg_img"><a href="feedback.html"><i class="fa fa-file-text" aria-hidden="true"></i></a></span>
             </div>
         </div>

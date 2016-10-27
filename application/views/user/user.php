@@ -23,38 +23,59 @@
 
             <div class="user-search">
                 <div class="mentor_search"><input type="search" name="" value="" placeholder="Mentor Search ..."/><i class="fa fa-search" aria-hidden="true"></i></div>
-
+ 
                 <div class="mentor_prf">
-                    <div class="mentor_information">
-                        <div class="mentor_user"><a href="profile.html"><span class="mentor_user_img green"><img src="<?php echo base_url('/assets/'); ?>images/user1.png" alt="Hemant"/></span></a>
-                            <span class="prf_sm_img"><img src="<?php echo base_url('/assets/'); ?>images/3.png" alt="smiely"/> <img src="<?php echo base_url('/assets/'); ?>images/1.png" alt="nutral"/> <img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad"/></span>
-                             <!-- <span class="mentor_txt">Hemant Sakarwal</span>--></div>
-                        <div class="mentor_org"><span class="mentor_org_img yellow"><img src="<?php echo base_url('/assets/'); ?>images/org1.jpg" alt="fiables"/></span>
-                        <span class="prf_sm_img"><img src="<?php echo base_url('/assets/'); ?>images/3.png" alt="smiely"/> <img src="<?php echo base_url('/assets/'); ?>images/1.png" alt="nutral"/> <img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad"/></span> <!-- <span class="mentor_txt">Fiables Offshoring Services Pvt. Ltd.</span>--></div>
-                    </div>
+<div class="mentor_information">
+<div class="mentor_user"><span class="mentor_user_img green"><img src="images/user1.png" alt="Hemant" class="mentor_popup_show"/></span></a>
+<div class="prf_sm_img">
+<span class="prf_sm_img_inner"><img src="images/3.png" alt="smiely"/> <b class="num_prf">(25080)</b></span>
+<span class="prf_sm_img_inner"><img src="images/1.png" alt="nutral"/> <b class="num_prf">(65822)</b></span>
+<span class="prf_sm_img_inner"><img src="images/2.png" alt="sad"/> <b class="num_prf">(852369)</b></span>
+</div>
+<span class="mentor_txt"><a href="user-chat.html">Chat with Mentor</a></span></div>
+</div>
 
-                    <div class="mentor_information">
-                        <div class="mentor_user"><a href="profile.html"><span class="mentor_user_img red"><img src="<?php echo base_url('/assets/'); ?>images/user2.jpg" alt="Hemant"/></span></a>
-                        <span class="prf_sm_img"><img src="<?php echo base_url('/assets/'); ?>images/3.png" alt="smiely"/> <img src="<?php echo base_url('/assets/'); ?>images/1.png" alt="nutral"/> <img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad"/></span> <!-- <span class="mentor_txt">Hemant Sakarwal</span>--></div>
-                        <div class="mentor_org"><span class="mentor_org_img white"><img src="<?php echo base_url('/assets/'); ?>images/org2.jpg" alt="fiables"/></span>
-                        <span class="prf_sm_img"><img src="<?php echo base_url('/assets/'); ?>images/3.png" alt="smiely"/> <img src="<?php echo base_url('/assets/'); ?>images/1.png" alt="nutral"/> <img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad"/></span> <!-- <span class="mentor_txt">Fiables Offshoring Services Pvt. Ltd.</span>--></div>
-                    </div>
+<div class="mentor_information">
+<div class="mentor_user"><a href="profile.html"><span class="mentor_user_img yellow"><img src="images/user3.jpeg" alt="Hemant" class="mentor_popup_show"/></span></a>
+<div class="prf_sm_img">
+<span class="prf_sm_img_inner"><img src="images/3.png" alt="smiely"/> <b class="num_prf">(25080)</b></span>
+<span class="prf_sm_img_inner"><img src="images/1.png" alt="nutral"/> <b class="num_prf">(65822)</b></span>
+<span class="prf_sm_img_inner"><img src="images/2.png" alt="sad"/> <b class="num_prf">(852369)</b></span>
+</div>
+<span class="mentor_txt"><a href="user-chat.html">Chat with Mentor</a></span></div>
+</div>
 
-                    <div class="mentor_information">
-                        <div class="mentor_user"><a href="profile.html"><span class="mentor_user_img black"><img src="<?php echo base_url('/assets/'); ?>images/user3.jpeg" alt="Hemant"/></span></a>
-                        <span class="prf_sm_img"><img src="<?php echo base_url('/assets/'); ?>images/3.png" alt="smiely"/> <img src="<?php echo base_url('/assets/'); ?>images/1.png" alt="nutral"/> <img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad"/></span> <!-- <span class="mentor_txt">Hemant Sakarwal</span>--></div>
-                        <div class="mentor_org"><span class="mentor_org_img yellow"><img src="<?php echo base_url('/assets/'); ?>images/org3.jpeg" alt="fiables"/></span>
-                        <span class="prf_sm_img"><img src="<?php echo base_url('/assets/'); ?>images/3.png" alt="smiely"/> <img src="<?php echo base_url('/assets/'); ?>images/1.png" alt="nutral"/> <img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad"/></span> <!-- <span class="mentor_txt">Fiables Offshoring Services Pvt. Ltd.</span>--></div>
-                    </div>
+<div class="mentor_information">
+<div class="mentor_user"><a href="profile.html"><span class="mentor_user_img red"><img src="images/user2.jpg" alt="Hemant" class="mentor_popup_show"/></span></a>
+<div class="prf_sm_img">
+<span class="prf_sm_img_inner"><img src="images/3.png" alt="smiely"/> <b class="num_prf">(25080)</b></span>
+<span class="prf_sm_img_inner"><img src="images/1.png" alt="nutral"/> <b class="num_prf">(65822)</b></span>
+<span class="prf_sm_img_inner"><img src="images/2.png" alt="sad"/> <b class="num_prf">(852369)</b></span>
+</div>
+<span class="mentor_txt"><a href="user-chat.html">Chat with Mentor</a></span></div>
+</div>
 
-                    <div class="mentor_information">
-                        <div class="mentor_user"><a href="profile.html"><span class="mentor_user_img red"><img src="<?php echo base_url('/assets/'); ?>images/user4.jpeg" alt="Hemant"/></span></a>
-                        <span class="prf_sm_img"><img src="<?php echo base_url('/assets/'); ?>images/3.png" alt="smiely"/> <img src="<?php echo base_url('/assets/'); ?>images/1.png" alt="nutral"/> <img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad"/></span> <!-- <span class="mentor_txt">Hemant Sakarwal</span>--></div>
-                        <div class="mentor_org"><span class="mentor_org_img green"><img src="<?php echo base_url('/assets/'); ?>images/org4.jpg" alt="fiables"/></span>
-                        <span class="prf_sm_img"><img src="<?php echo base_url('/assets/'); ?>images/3.png" alt="smiely"/> <img src="<?php echo base_url('/assets/'); ?>images/1.png" alt="nutral"/> <img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad"/></span> <!-- <span class="mentor_txt">Fiables Offshoring Services Pvt. Ltd.</span>--></div>
-                    </div>
+<div class="mentor_information">
+<div class="mentor_user"><a href="profile.html"><span class="mentor_user_img black"><img src="images/org2.jpg" alt="Hemant" class="mentor_popup_show"/></span></a>
+<div class="prf_sm_img">
+<span class="prf_sm_img_inner"><img src="images/3.png" alt="smiely"/> <b class="num_prf">(25080)</b></span>
+<span class="prf_sm_img_inner"><img src="images/1.png" alt="nutral"/> <b class="num_prf">(65822)</b></span>
+<span class="prf_sm_img_inner"><img src="images/2.png" alt="sad"/> <b class="num_prf">(852369)</b></span>
+</div>
+<span class="mentor_txt"><a href="user-chat.html">Chat with Mentor</a></span></div>
+</div>
 
-                </div>
+<div class="mentor_information">
+<div class="mentor_user"><a href="profile.html"><span class="mentor_user_img red"><img src="images/org4.jpg" alt="Hemant" class="mentor_popup_show"/></span></a>
+<div class="prf_sm_img">
+<span class="prf_sm_img_inner"><img src="images/3.png" alt="smiely"/> <b class="num_prf">(25080)</b></span>
+<span class="prf_sm_img_inner"><img src="images/1.png" alt="nutral"/> <b class="num_prf">(65822)</b></span>
+<span class="prf_sm_img_inner"><img src="images/2.png" alt="sad"/> <b class="num_prf">(852369)</b></span>
+</div>
+<span class="mentor_txt"><a href="user-chat.html">Chat with Mentor</a></span></div>
+</div>
+
+</div>
             </div>
 
 
@@ -71,111 +92,78 @@
 
                     <div class="prf_ask">
                         <h2>Ask</h2>
-
-                        <div class="ask_input"><input class="ask_input_i" type="text" name="" value="" placeholder="Enter your..."/></div>
+                        <form method="post" action="<?php echo base_url(); ?>user/ask">
+                        <div class="ask_input"><input class="ask_input_i" type="text" name="asktext" value="" placeholder="Enter your..."/></div>
 
 
                         <div class="prf_select">
-                            <select>
-                                <option>Group</option>
-                                <option>Idle</option>
-                                <option>Help</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
+                               <select id="busnasktype" name="busnasktype">
+                                   <option value="0">-- Select --</option>
+                                <option value="1">Public</option>
+                                <option value="2">Private</option>
+                                 
                             </select>
-
-                            <select>
-                                <option>Public</option>
-                                <option>Idle</option>
-                                <option>Help</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
+                            <select style="display:none;" id="askgroup" name="askgroup">
+                                  <option value="0">-- Select --</option>
+                              <?php foreach($groups as $groupsData){
+                                  ?>
+                                <option value="<?php echo $groupsData->id; ?>"><?php echo $groupsData->group_name; ?></option>
+                           <?php   } ?>
                             </select>
-
-                            <select>
-                                <option>Mentor</option>
-                                <option>Idle</option>
-                                <option>Help</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                            </select>
-
-                            <select>
-                                <option>Vendor</option>
-                                <option>Idle</option>
-                                <option>Help</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                            </select>
-
+             <input type="submit" class="prf_ask_btn" value="Post" name="ask" />  
                         </div>
+                        <script>
+                            $(function(){
+                                $( "#busnasktype" ).change(function() {
+  var busnasktype=$( "#busnasktype option:selected" ).val();
+           if(busnasktype==0 || busnasktype==1){
+               $("#askgroup").hide();
+           }else{
+                $("#askgroup").show();
+           }
+});
+                            })
+                        </script>
+                         
+                        </form>
                     </div>
 
 
                     <div class="prf_ask">
                         <h2>Give</h2>
-
-                        <div class="ask_input"><input class="ask_input_give" type="text" name="" value="" placeholder="Enter your..."/></div>
+  <form method="post" action="<?php echo base_url(); ?>user/give">
+                        <div class="ask_input"><input class="ask_input_give" type="text" name="" value="givetext" placeholder="Enter your..."/></div>
 
 
                         <div class="prf_select_give">
-                            <select>
-                                <option>Group</option>
-                                <option>Idle</option>
-                                <option>Help</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
+                           <select id="busngivetype" name="busngivetype">
+                                   <option value="0">-- Select --</option>
+                                <option value="1">Public</option>
+                                <option value="2">Private</option>
+                                 
                             </select>
-
-                            <select>
-                                <option>Public</option>
-                                <option>Idle</option>
-                                <option>Help</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
+                            <select style="display:none;" id="givegroup" name="givegroup">
+                                  <option value="0">-- Select --</option>
+                              <?php foreach($groups as $groupsData){
+                                  ?>
+                                <option value="<?php echo $groupsData->id; ?>"><?php echo $groupsData->group_name; ?></option>
+                           <?php   } ?>
                             </select>
-
-                            <select>
-                                <option>Mentor</option>
-                                <option>Idle</option>
-                                <option>Help</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                            </select>
-
-                            <select>
-                                <option>Vendor</option>
-                                <option>Idle</option>
-                                <option>Help</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                                <option>Ask a Question</option>
-                            </select>
-
+  <input type="submit" class="prf_ask_btn" value="Post" name="give" />  
                         </div>
+                           <script>
+                            $(function(){
+                                $( "#busngivetype" ).change(function() {
+  var busngivetype=$( "#busngivetype option:selected" ).val();
+           if(busngivetype==0 || busngivetype==1){
+               $("#givegroup").hide();
+           }else{
+                $("#givegroup").show();
+           }
+});
+                            })
+                        </script>
+  </form>
                     </div>
 
                 </div>

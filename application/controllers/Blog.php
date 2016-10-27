@@ -56,6 +56,7 @@ public function readPost() {
            
           $data['content'] = "blog/singlepost";
            $data['disc_comments'] = $this->blog_model->get_comment($id);
+       //    echo "<pre>"; print_r($data['disc_comments']); exit;
         $data['disc_post'] = $this->blog_model->get_post($id);
         
          $data['getPersonLikesPerPost'] = $this->blog_model->getPersonLikesPerPost($id,$iduser);
@@ -72,21 +73,45 @@ public function readPost() {
         {
             redirect(base_url().'Blog/readPost'.$postID);
         }
-        $id = $this->session->userdata('session_userId');
-        if(!$id)
+          $iduser=$this->session->userdata('session_userId');
+        if(!$iduser)
         {
             redirect(base_url());
         }
         
         $this->load->model('blog_model');
         $data = array(
-            'post_id' => $postID,
-            'user_id' => $this->session->userdata('id'),
+            'idblog' => $postID,
+            'iduser' => $iduser,
             'comment' => $this->input->post('comment'),
         );
-        $this->disc_comment->add_comment($data);
+        $this->blog_model->add_comment($data);
         $this->session->set_flashdata('msg', 'Blog Comment posted Successfully');
+         
         //redirect(base_url().'blog/post/'.$postID);
-        redirect(base_url().'dashboard/disc_post/'.$postID);
+        redirect(base_url().'Blog/readPost/'.$postID);
+    }
+    function disc_like() {//single post page
+
+ $this->load->model('blog_model');
+            $post_id = $this->input->post('postId');
+        $user_id =  $this->session->userdata('session_userId');
+        
+      
+       // $data = array('user_id' => $user_id);
+        $likes = $this->blog_model->insert_like($post_id, $user_id);
+
+        echo $likes;
+        exit;
+    }
+
+    function disc_unlike() {//single post page
+$this->load->model('blog_model');
+          $post_id = $this->input->post('postId');
+        $user_id =  $this->session->userdata('session_userId');
+         $likes = $this->blog_model->delete_like($post_id, $user_id);
+
+        echo $likes;
+        exit;
     }
 }

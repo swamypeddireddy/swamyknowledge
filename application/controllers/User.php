@@ -16,9 +16,10 @@ class User extends CI_Controller {
         if (NULL == $_POST) {
 
             if (true == $this->session->userdata('session_userId')) {
-
+                     $this->load->model(array("ck_model"));
                 //redirect to profile page
                 $MSG['Info'] = 'You are logged into ConnectKarma. Below is a Dashboard of ConnectKarma.';
+                $MSG['groups'] = $this->ck_model->get_userAllGroups();
                 $this->load->view('user/user', $MSG);
                 $this->load->view('common/footer');
             } else {
@@ -280,5 +281,65 @@ class User extends CI_Controller {
         $this->load->view('home/knowledge_hub');
         $this->load->view('common/footer');
     }
-
+ public function ask() {
+      if ($this->input->post('ask')){
+              $this->load->model(array("ck_model"));
+                $asktext='';
+                $busntype=0;
+                 $group=0;
+                $iduser=$this->session->userdata('session_userId');
+                 if ($this->input->post('asktext')) {
+                    $asktext = $this->input->post('asktext');
+                }
+                if ($this->input->post('busnasktype')) {
+                    $busntype = $this->input->post('busnasktype');
+                }
+                  if ($this->input->post('askgroup') && ($busntype==2)) {
+                    $group = $this->input->post('askgroup');
+                }
+                $values=array('title'=>$asktext,'public'=>$busntype,'idgroup'=>$group,'createdby'=>$iduser);
+                $postId=$this->ck_model->registerAsk($values);
+                if($postId>0){
+                   // echo base_url().'Blog/createPost'; exit;
+                     $this->session->set_flashdata('success', "Ask Created Succcessfully!");
+                    redirect(base_url().'User/');
+                }else{
+                     $this->session->set_flashdata('fail', "Ask Creation failed!");
+                    redirect(base_url().'User/');
+                }
+          }
+ }
+ public function give() {
+      if ($this->input->post('give')){
+              $this->load->model(array("ck_model"));
+                $asktext='';
+                $busntype=0;
+                 $group=0;
+                $iduser=$this->session->userdata('session_userId');
+                 if ($this->input->post('asktext')) {
+                    $asktext = $this->input->post('asktext');
+                }
+                if ($this->input->post('busngivetype')) {
+                    $busntype = $this->input->post('busngivetype');
+                }
+                  if ($this->input->post('givegroup') && ($busntype==2)) {
+                    $group = $this->input->post('givegroup');
+                }
+                $values=array('title'=>$asktext,'public'=>$busntype,'idgroup'=>$group,'createdby'=>$iduser);
+                $postId=$this->ck_model->registerGive($values);
+                if($postId>0){
+                   // echo base_url().'Blog/createPost'; exit;
+                     $this->session->set_flashdata('success', "Give Created Succcessfully!");
+                    redirect(base_url().'User/');
+                }else{
+                     $this->session->set_flashdata('fail', "Give Creation failed!");
+                    redirect(base_url().'User/');
+                }
+          }
+ }
+  public function askList() {
+       $this->load->model(array("ck_model"));
+        $iduser=$this->session->userdata('session_userId');
+       $this->ck_model->get_userAllAsk($iduser);
+  }
 }

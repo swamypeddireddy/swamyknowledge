@@ -27,29 +27,29 @@
 
           foreach ($disc_comments as $row) {
           ?>
-          <div class="message-box" id="message_<?php echo $row['comment_id']; ?>">
+          <div class="message-box" id="message_<?php echo $row->idblogcomments; ?>">
               <p>
-                  <a href="<?php echo base_url() . 'users/viewProfile/'.$row['user_id']; ?>">
+                  <a href="#">
                   
                   
                 <img class="media-object" src="<?php
-                            if (isset($row['profile']) && $row['profile'] != '') {
-                                echo $row['profile'];
+                            if (isset($row->image) && $row->image != '') {
+                                echo base_url('documents/profile_photos/'.$row->image);
                             } else {
-                                echo base_url('assets/img/man.png');
+                                echo base_url('documents/profile_photos/default.png');
                             }
                             ?>" width="40px" height="40px">
                 </a>
                 
-              <strong><?= $row['firstname'] ?></strong> said at <?= date('d-m-Y h:i A', strtotime($row['date_added'])) ?><br>
+              <strong><?= $row->firstname ?></strong> said at <?= date('d-m-Y h:i A', strtotime($row->createddate)) ?><br>
           <div class="message-content">
-          <?= $row['comment']; ?>
+          <?= $row->comment; ?>
           </div>
           </p>
-          <?php if ($row['post_id'] != 0 && ($this->session->userdata('id') == $row['user_id'])) { ?>
+          <?php if ($row->idblogcomments != 0 && ($this->session->userdata('session_userId') == $row->iduser)) { ?>
 
-          <button class="btn btn-primary btnEditAction" name="edit" onClick="showDiscEditBox(this,<?php echo $row["comment_id"]; ?>)">Edit</button>
-          <button class="btn btn-danger btnDeleteAction" name="delete" onClick="callCrudAction('delete',<?php echo $row["comment_id"]; ?>)">Delete</button>
+         <!-- <button class="btn btn-primary btnEditAction" name="edit" onClick="showDiscEditBox(this,<?php //echo $row->idblogcomments; ?>)">Edit</button>
+          <button class="btn btn-danger btnDeleteAction" name="delete" onClick="callCrudAction('delete',<?php //echo $row->idblogcomments; ?>)">Delete</button> -->
           <?php } ?>
           </div>
 
@@ -79,6 +79,7 @@
           <p style="padding-top: 15px">
           <span>&nbsp;</span>
           <input class="btn btn-primary submit" type="submit" name="add" value="Add comment" />
+          <br />
           </p>
           </div>
           </form>
@@ -92,5 +93,75 @@
           ?>
           <a href="<?= base_url() ?>users/login">Login to comment</a>
           <?php
-          }
-          
+          } ?>
+<script type="text/javascript">
+    $(document).ready(function () {
+  
+
+        /// like 
+
+        //start of discussions comments and forum likes and unlikes
+        $('.discLikeThis').on("click", function (e) {
+
+            var getID = $(this).attr('id').replace('post_id', '');
+
+alert(getID);
+            $("#disclike-loader-" + getID).html('<img src="<?php echo base_url(); ?>assets/img/loader.gif" alt="" />');
+   $.ajax({
+                type: "POST",
+                dataType: "html",
+                url: "<?php echo base_url() ?>Blog/disc_like",
+                data: {postId: getID},
+                success: function (response) {
+                     if(response>0){
+                         
+
+                $('#disclike-stats-' + getID).html(response);
+
+                $('#disclike-panel-' + getID).html('<a href="javascript: void(0)" id="post_id' + getID + '" class="discUnlike">Unlike</a>');
+
+                $("#disclike-loader-" + getID).html('');
+            
+                     }else{
+                          
+                     }
+                }
+            });
+            
+            
+            
+        });
+
+        /// unlike 
+
+        $('.discUnlike').on("click", function (e) {
+
+            var getID = $(this).attr('id').replace('post_id', '');
+      $("#disclike-loader-" + getID).html('<img src="<?php echo base_url(); ?>assets/img/loader.gif" alt="" />');
+       $.ajax({
+                type: "POST",
+                dataType: "html",
+                url: "<?php echo base_url() ?>Blog/disc_unlike",
+                data: {postId: getID},
+                success: function (response) {
+                     if(response==1){
+                          $('#disclike-stats-' + getID).html(response);
+
+                $('#disclike-panel-' + getID).html('<a href="javascript: void(0)" id="post_id' + getID + '" class="discLikeThis">Like</a>');
+
+                $("#disclike-loader-" + getID).html('');
+            
+                     }else{
+                          
+                     }
+                }
+            });
+            
+        });
+ 
+        //end of forum comments and forum likes and unlikes
+    });
+ 
+
+     
+</script>

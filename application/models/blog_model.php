@@ -67,5 +67,27 @@ Class Blog_model extends CI_Model
          }
           return $result;  
     }
+     function add_comment($data)
+    {
+        $this->db->insert('ck_blogcomments',$data);
+        return $this->db->insert_id();
+    }
+     function insert_like($post_id,$user_id) 
+    {
+         $Id=0;
+        $ip_data = array('idblog'=>$post_id,'iduser' => $user_id);
+            $this->db->insert('ck_bloglikes',$ip_data);
+             $InsertedRows = $this->db->affected_rows();
+        if ($InsertedRows > 0) {
+            $Id = $this->db->insert_id();
+        }
+        return $Id;
+      }
+     function delete_like($post_id,$user_id) 
+    {
+         $ip_data = array('idblog'=>$post_id,'iduser' => $user_id);
+            $this->db->delete('ck_bloglikes',$ip_data);
+         return 1;
+      }
 }
 ?>
