@@ -8,7 +8,7 @@
 //facebook API
 $('.fb').click(function () {
 
-    alert('logging into connectkarma using facebook');
+    //alert('logging into connectkarma using facebook');
     // Load the SDK asynchronously on document /connectkarma/index.php/User/ as script using facebook-jssdk
     (function (d, s, id) {
 
@@ -31,7 +31,7 @@ $('.fb').click(function () {
     window.fbAsyncInit = function () {
 
         FB.init({
-            appId: '1740937489503955',
+            appId: '1741005099497194',
             cookie: true, // enable cookies to allow the server to access the session
             xfbml: true, // parse social plugins on this page
             version: 'v2.5' // use graph api version 2.5
@@ -57,8 +57,8 @@ $('.fb').click(function () {
     // This is called with the results from from FB.getLoginStatus().
     function statusChangeCallback(response) {
 
-        alert('statusChangeCallback');
-        console.log(response);
+        //alert('statusChangeCallback');
+        //console.log(response);
         // The response object is returned with a status field that lets the
         // app know the current login status of the person.
         // Full docs on the response object can be found in the documentation
@@ -66,12 +66,12 @@ $('.fb').click(function () {
         if (response.status === 'connected') {
             var accessToken = response.authResponse.accessToken;
             var status = response.status;
-            console.log(accessToken, status);
+            //console.log(accessToken, status);
             // Logged into your app and Facebook.
             testAPI(accessToken, status);
         } else if (response.status === 'not_authorized') {
             // The person is logged into Facebook, but not your app.
-            
+
             $('.messages').css('display', 'block');
             $('.info').css('display', 'block');
             document.getElementById('MSG_INFO').innerHTML = 'Please log into ConnectKarma';
@@ -104,26 +104,24 @@ $('.fb').click(function () {
     // successful.  See statusChangeCallback() for when this call is made.
     function testAPI(accessToken, status) {
 
-        console.log('Welcome!  Fetching your information.... ');
+        //console.log('Welcome!  Fetching your information.... ');
         FB.api('/me', function (response) {
 
-            alert(response.name);
+            //alert(response.name);
             console.log(response);
             console.log('Successful login for: ' + response.name);
 
             $.ajax({
                 method: "POST",
-                dataType:"JSON",
-                url:    "http://172.16.4.126/connectkarma/index.php/User/",
+                dataType: "JSON",
+                url: "http://172.16.4.126/ckfirst/index.php/User/",
                 data: {socialMediaLogin: true, socialMediaLoginName: 'facebook', id: response.id, name: response.name, accessToken: accessToken, status: status},
             }).done(function (data) {
-                alert(data['0']);
+
+                var URL = data['baseURL'] + data['controller'] + '/' + data['action'];
+                window.location = URL;
             });
 
-            //$('.messages').css('display', 'block');
-            //$('.success').css('display', 'block');
-            //document.getElementById('MSG_SUCCESS').innerHTML = 'Thanks for logging in, ' + response.name + '!';
-            
         });
     }
 });
