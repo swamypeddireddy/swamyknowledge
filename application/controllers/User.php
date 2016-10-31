@@ -15,7 +15,7 @@ class User extends CI_Controller {
 
         if (NULL == $_POST) {
 
-            if (true == $this->session->userdata('session_userId')) {
+            if (true == $this->session->userdata('session_userId') || true == $this->session->userdata('social_login_status')) {
 
                 //redirect to profile page
                 $MSG['Info'] = 'You are logged into ConnectKarma. Below is a Dashboard of ConnectKarma.';
