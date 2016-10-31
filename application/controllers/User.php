@@ -138,7 +138,7 @@ class User extends CI_Controller {
             } else {
 
                 $arrayWhere     = array('firstname' => $_POST['firstname'], 'password' => md5($_POST['password']));
-                $queryResult    = $this->db->select('*')->from('user_registrations')->where($arrayWhere)->get();
+                $queryResult    = $this->db->select('*')->from('user_registration')->where($arrayWhere)->get();
                 $queryNumRows   = $queryResult->num_rows();
                 $queryRowArray  = $queryResult->row_array();
 
@@ -177,7 +177,7 @@ class User extends CI_Controller {
             $data = array(
                 'firstname' => $_POST['firstname'],
                 'email'     => $_POST['email'],
-                'password'  => base64_encode(base64_encode($_POST['password']))
+                'password'  => md5($_POST['password'])
             );
 
             if (true == $this->db->insert('user_registration', $data)) {
