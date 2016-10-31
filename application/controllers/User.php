@@ -21,7 +21,14 @@ class User extends CI_Controller {
                 $MSG['Info'] = 'You are logged into ConnectKarma. Below is a Dashboard of ConnectKarma.';
                 $this->load->view('user/user', $MSG);
                 $this->load->view('common/footer');
-            } else {
+            } 
+//            elseif(true == $this->session->userdata('social_login_status')) {
+//                
+//                $MSG['Info'] = 'You are logged into ConnectKarma using social media. Below is a Dashboard of ConnectKarma.';
+//                $this->load->view('home/index');
+//                $this->load->view('common/footer');
+//            } 
+                else {
 
                 $this->load->view('home/index');
                 $this->load->view('common/footer');
@@ -49,7 +56,7 @@ class User extends CI_Controller {
 
                             $arraySessionData = array (
 
-                                'login_status'          => 1,
+                                'social_login_status'   => 1,
                                 'session_userId'        => '',
                                 'session_userName'      => $_POST['socialMediaLoginName'],
                                 'session_userDocument'  => '',
@@ -83,32 +90,35 @@ class User extends CI_Controller {
                         } elseif(true   == $queryCheckUserRecord) {
                             //if registered in social_media_logins
 
-                            //fetch user details for registration by social media
-                            $fb = new Facebook\Facebook([
-                                'app_id' => '1740937489503955',
-                                'app_secret' => '846d9c53d7587ebe128de576b8090396',
-                                'default_graph_version' => 'v2.5',
-                            ]);
-
-                            $request    = new FacebookRequest (
-                                $session,
-                                'GET',
-                                $_POST['id']
-                            );
-
-                            $response       = $request->execute();
-                            $graphObject    = $response->getGraphObject();
-                            
-                            echo'</pre>';print_r($graphObject);echo'</pre>';exit;
+//                            //fetch user details for registration by social media
+//                            $fb = new Facebook\Facebook([
+//                                'app_id' => '1740937489503955',
+//                                'app_secret' => '846d9c53d7587ebe128de576b8090396',
+//                                'default_graph_version' => 'v2.5',
+//                            ]);
+//
+//                            $request    = new FacebookRequest (
+//                                $session,
+//                                'GET',
+//                                $_POST['id']
+//                            );
+//
+//                            $response       = $request->execute();
+//                            $graphObject    = $response->getGraphObject();
+//                            
+//                            echo'</pre>';print_r($graphObject);echo'</pre>';exit;
                         }
 
+                        //$this->index();
+                        
                         $reponceData    = array (
 
                             'Success'       => 'Login Successful using Facebook. Welcome to ConnectKarma!',
+                            'baseURL'       =>  base_url().'index.php/',
                             'controller'    => 'user',
-                            'action'        => 'user'
+                            'action'        => 'facebookLogin'
                         );
-                        echo json_encode($reponceData);
+                        echo json_encode($reponceData);exit;
 
                         //$MSG['Success'] = 'Login Successful using Facebook. Welcome to ConnectKarma!';
                         //$this->load->view('user/user', $MSG);
@@ -150,7 +160,7 @@ class User extends CI_Controller {
 
                     $arraySessionData = array (
 
-                        'login_status'          => 1,
+                        'social_login_status'   => '',
                         'session_userId'        => $queryRowArray['id'],
                         'session_userName'      => $queryRowArray['firstname'],
                         'session_userDocument'  => $queryRowArray['documents']
@@ -209,7 +219,7 @@ class User extends CI_Controller {
                             //set session data
                             $arraySessionData = array (
                                 
-                                'login_status'          => 1,
+                                'social_login_status'   => '',
                                 'session_userId'        => $userId,
                                 'session_userName'      => $_POST['firstname'],
                                 'session_userDocument'  => $target_dir . '/' . $_FILES['userfile']['name']
@@ -242,7 +252,7 @@ class User extends CI_Controller {
 
         $arraySessionData = array (
             
-            'login_status'          => 1,
+            'social_login_status'   => '',
             'session_userId'        => '',
             'session_userName'      => '',
             'session_userDocument'  => ''
@@ -281,4 +291,10 @@ class User extends CI_Controller {
         $this->load->view('common/footer');
     }
 
+    public function facebookLogin() {
+        
+        $MSG['Success'] = 'Login Successful using Facebook. Welcome to ConnectKarma!';
+        $this->load->view('user/user', $MSG);
+        $this->load->view('common/footer');
+    }
 }
