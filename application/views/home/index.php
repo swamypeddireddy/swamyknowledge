@@ -19,6 +19,11 @@
                             <li class="tw"><i class="fa fa-twitter" aria-hidden="true"></i></li>
                             <li class="lin"><i class="fa fa-linkedin" aria-hidden="true"></i></li>
                             <li class="goog"><i class="fa fa-google-plus" aria-hidden="true"></i></li>
+                            
+<!--                            <a href="<?php echo base_url();?>index.php/hauth/login/Twitter"><li class="tw"><i class="fa fa-twitter" aria-hidden="true"></i></li></a>
+                            <a href="<?php echo base_url();?>index.php/hauth/login/Facebook"><li class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></li></a>
+                            <a href="<?php echo base_url();?>index.php/hauth/login/LinkedIn"><li class="lin"><i class="fa fa-linkedin" aria-hidden="true"></i></li></a>
+                            <li class="goog"><i class="fa fa-google-plus" aria-hidden="true"></i></li>-->
                         </ul>
                     </div>
 
