@@ -1,9 +1,13 @@
 <script>
-    if ('' != "<?php echo $this->session->userdata('session_userId'); ?>" && "none" == $('#Logout').css('display')) {
+    if ('' == "<?php echo $this->session->userdata('session_userId'); ?>" && '' == "<?php echo $this->session->userdata('social_login_status'); ?>") {
+
+        $('#User_Register').css('display', 'block');
+        $('#Logout').css('display', 'none');
+    } else {
 
         $('#User_Register').css('display', 'none');
         $('#Logout').css('display', 'block');
-    };
+    }
 </script>
 <footer>
     <div class="main">
