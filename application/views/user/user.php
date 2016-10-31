@@ -9,13 +9,13 @@
     <?php if (isset($Info) && $Info != '') { ?>
         <div class="messagesphp">
             <div class="infophp" id="INFO"><?php echo $Info; ?></div>
-            <!-- <div class="successphp" id="SUCCESS"><?php //echo $Success; ?></div>-->
+            <!-- <div class="successphp" id="SUCCESS"><?php //echo $Success;  ?></div>-->
             <!--<div class="warningphp" id="WARNING"></div>
             <div class="errorphp" id="ERROR"></div>-->
         </div>
     <?php } ?>
 
- 
+
 
     <div class="user-information">
         <div class="main">
@@ -63,7 +63,7 @@
                     <div class="user-profile_txt"><p><b class="font_size">Managing Director</b><br/>
                             <b style="font-size:13px; font-weight:normal;">Fiables Offshoring Services Pvt. Ltd.</b></p>
                         <p class="new_para">Global Senior Executive with 20+ years of International experience of working in Europe & America for GE, UBS, Computer science JNU Delhi, 1992 B.E, ...</div>
-                    <div class="user-profile_right"><img src="images/hemant.jpg" alt="Hemant Sakarwal"/></div>
+                    <div class="user-profile_right"><img src="<?php echo base_url('/assets/') ?>images/hemant.jpg" alt="Hemant Sakarwal"/></div>
                 </div>
 
 
@@ -304,11 +304,3 @@
     </div>
 
 </section>
-
-<script>
-    if('' != "<?php echo $this->session->userdata('session_userId');?>" && "none"   == $('#Logout').css('display')) {
-        
-        $('#User_Register').css('display', 'none');
-        $('#Logout').css('display', 'block');
-    };
-</script>
