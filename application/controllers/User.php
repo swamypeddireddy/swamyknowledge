@@ -21,14 +21,7 @@ class User extends CI_Controller {
                 $MSG['Info'] = 'You are logged into ConnectKarma. Below is a Dashboard of ConnectKarma.';
                 $this->load->view('user/user', $MSG);
                 $this->load->view('common/footer');
-            } 
-//            elseif(true == $this->session->userdata('social_login_status')) {
-//                
-//                $MSG['Info'] = 'You are logged into ConnectKarma using social media. Below is a Dashboard of ConnectKarma.';
-//                $this->load->view('home/index');
-//                $this->load->view('common/footer');
-//            } 
-                else {
+            } else {
 
                 $this->load->view('home/index');
                 $this->load->view('common/footer');
@@ -36,60 +29,55 @@ class User extends CI_Controller {
         } elseif (NULL != $_POST) {
 
             //if loggedin through social media
-            if( isset($_POST['socialMediaLogin']) && (true == $_POST['socialMediaLogin']) && ('connected'    == $_POST['status'])) {
+            if (isset($_POST['socialMediaLogin']) && (true == $_POST['socialMediaLogin']) && ('connected' == $_POST['status'])) {
 
                 //fetch social media types
-                $socialMediaTypes       = $this->db->select('*')->from('social_medias')->get();
-                $socialMediaTypesData   = $socialMediaTypes->result();
+                $socialMediaTypes = $this->db->select('*')->from('social_medias')->get();
+                $socialMediaTypesData = $socialMediaTypes->result();
 
-                foreach($socialMediaTypesData as $socialMediaTypeData) {
+                foreach ($socialMediaTypesData as $socialMediaTypeData) {
 
                     //if social media match
-                    if($socialMediaTypeData->social_media_name  == $_POST['socialMediaLoginName']) {
+                    if ($socialMediaTypeData->social_media_name == $_POST['socialMediaLoginName']) {
 
                         //check if user already registerd through social media
-                        $arrayWhere = array('social_media_type_id'=> $socialMediaTypeData->id, 'social_media_user_id'=> $_POST['id']);
-                        $queryCheckUserRecord   = $this->db->select('*')->from('social_media_logins')->where($arrayWhere)->get()->num_rows();
+                        $arrayWhere = array('social_media_type_id' => $socialMediaTypeData->id, 'social_media_user_id' => $_POST['id']);
+                        $queryCheckUserRecord = $this->db->select('*')->from('social_media_logins')->where($arrayWhere)->get()->num_rows();
 
                         //create session
-                        if('connected'  == $_POST['status']) {
+                        if ('connected' == $_POST['status']) {
 
-                            $arraySessionData = array (
-
-                                'social_login_status'   => 1,
-                                'session_userId'        => '',
-                                'session_userName'      => $_POST['socialMediaLoginName'],
-                                'session_userDocument'  => '',
-                                'social_media_type_id'  => $socialMediaTypeData->id,
-                                'social_media_user_id'  => $_POST['id']
+                            $arraySessionData = array(
+                                'social_login_status' => 1,
+                                'session_userId' => '',
+                                'session_userName' => $_POST['socialMediaLoginName'],
+                                'session_userDocument' => '',
+                                'social_media_type_id' => $socialMediaTypeData->id,
+                                'social_media_user_id' => $_POST['id']
                             );
                             $this->session->sess_expiration = '900';
                             $this->session->set_userdata($arraySessionData);
                         }
                         //echo'session_created';exit;
-                        
                         //if not registered in social_media_logins
-                        if(false    == $queryCheckUserRecord) {
+                        if (false == $queryCheckUserRecord) {
 
                             //echo'usr not registered, registering user';
-
                             //register in social_media_logins
-                            $queryInsertSocialMediaLogin = array (
-
-                                'social_media_type_id'  => $socialMediaTypeData->id,
-                                'social_media_user_id'  => $_POST['id'],
+                            $queryInsertSocialMediaLogin = array(
+                                'social_media_type_id' => $socialMediaTypeData->id,
+                                'social_media_user_id' => $_POST['id'],
                                 'social_media_username' => $_POST['socialMediaLoginName'],
-                                'access_token'          => $_POST['accessToken'],
-                                'status'                => $_POST['status'],
-                                'created_by'            => '1',
-                                'created_on'            => 'now()',
-                                'updated_by'            => '1',
+                                'access_token' => $_POST['accessToken'],
+                                'status' => $_POST['status'],
+                                'created_by' => '1',
+                                'created_on' => 'now()',
+                                'updated_by' => '1',
                             );
 
                             $this->db->insert('social_media_logins', $queryInsertSocialMediaLogin);
-                        } elseif(true   == $queryCheckUserRecord) {
+                        } elseif (true == $queryCheckUserRecord) {
                             //if registered in social_media_logins
-
 //                            //fetch user details for registration by social media
 //                            $fb = new Facebook\Facebook([
 //                                'app_id' => '1740937489503955',
@@ -110,15 +98,15 @@ class User extends CI_Controller {
                         }
 
                         //$this->index();
-                        
-                        $reponceData    = array (
 
-                            'Success'       => 'Login Successful using Facebook. Welcome to ConnectKarma!',
-                            'baseURL'       =>  base_url().'index.php/',
-                            'controller'    => 'user',
-                            'action'        => 'facebookLogin'
+                        $reponceData = array(
+                            'Success' => 'Login Successful using Facebook. Welcome to ConnectKarma!',
+                            'baseURL' => base_url() . 'index.php/',
+                            'controller' => 'user',
+                            'action' => 'facebookLogin'
                         );
-                        echo json_encode($reponceData);exit;
+                        echo json_encode($reponceData);
+                        exit;
 
                         //$MSG['Success'] = 'Login Successful using Facebook. Welcome to ConnectKarma!';
                         //$this->load->view('user/user', $MSG);
@@ -127,24 +115,24 @@ class User extends CI_Controller {
                 }
 
                 //check for social media login
-                /*socialMediaLogin: true,
-                        socialMediaLoginName: 'facebook',
-                        id: response.id,
-                        name: response.name,
-                        accessToken: accessToken,
-                        status: status
+                /* socialMediaLogin: true,
+                  socialMediaLoginName: 'facebook',
+                  id: response.id,
+                  name: response.name,
+                  accessToken: accessToken,
+                  status: status
 
-                $queryInsertSocialMediaLogin = array(
-                    ''  => $_POST['socialMediaLogin'],
-                    ''  => $_POST['socialMediaLoginName'],
-                    ''  => $_POST['id'],
-                    'social_media_username'  => $_POST['name'],
-                    'access_token'  => $_POST['accessToken'],
-                    'status'    => $_POST['status'],
-                );
-                            $this->db->insert('mytable', $data);
+                  $queryInsertSocialMediaLogin = array(
+                  ''  => $_POST['socialMediaLogin'],
+                  ''  => $_POST['socialMediaLoginName'],
+                  ''  => $_POST['id'],
+                  'social_media_username'  => $_POST['name'],
+                  'access_token'  => $_POST['accessToken'],
+                  'status'    => $_POST['status'],
+                  );
+                  $this->db->insert('mytable', $data);
 
-                $queryInsertSocialMediaLogin    = ;*/
+                  $queryInsertSocialMediaLogin    = ; */
             } else {
 
                 $arrayWhere     = array('firstname' => $_POST['firstname'], 'password' => md5($_POST['password']));
@@ -158,8 +146,7 @@ class User extends CI_Controller {
                 //set session data
                 if ($queryNumRows === 1) {
 
-                    $arraySessionData = array (
-
+                    $arraySessionData = array(
                         'social_login_status'   => '',
                         'session_userId'        => $queryRowArray['id'],
                         'session_userName'      => $queryRowArray['firstname'],
@@ -176,6 +163,13 @@ class User extends CI_Controller {
         }
     }
 
+    public function checkEmailAddressExists() {
+        
+        $arrWhere       = array('email'  => $_POST['email']);
+        $queryResult    = $this->db->select('*')->from('user_registration')->where($arrWhere)->get()->num_rows();;
+        echo json_encode($queryResult);exit;
+    }
+
     public function register($data = null) {
 
         if (NULL == $_POST) {
@@ -184,10 +178,11 @@ class User extends CI_Controller {
             $this->load->view('common/footer');
         } elseif (NULL != $_POST) {
 
+            echo'<pre>';print_r($_POST);echo'</pre>';exit;
             $data = array(
                 'firstname' => $_POST['firstname'],
-                'email'     => $_POST['email'],
-                'password'  => md5($_POST['password'])
+                'email' => $_POST['email'],
+                'password' => md5($_POST['password'])
             );
 
             if (true == $this->db->insert('user_registration', $data)) {
@@ -217,12 +212,11 @@ class User extends CI_Controller {
                             //$this->load->view('home/index', $MSG);
                             //$this->load->view('common/footer');
                             //set session data
-                            $arraySessionData = array (
-                                
-                                'social_login_status'   => '',
-                                'session_userId'        => $userId,
-                                'session_userName'      => $_POST['firstname'],
-                                'session_userDocument'  => $target_dir . '/' . $_FILES['userfile']['name']
+                            $arraySessionData = array(
+                                'social_login_status' => '',
+                                'session_userId' => $userId,
+                                'session_userName' => $_POST['firstname'],
+                                'session_userDocument' => $target_dir . '/' . $_FILES['userfile']['name']
                             );
                             //$this->session->sess_expiration = '900';
                             $this->session->set_userdata($arraySessionData);
@@ -250,12 +244,11 @@ class User extends CI_Controller {
 
     public function Logout() {
 
-        $arraySessionData = array (
-            
-            'social_login_status'   => '',
-            'session_userId'        => '',
-            'session_userName'      => '',
-            'session_userDocument'  => ''
+        $arraySessionData = array(
+            'social_login_status' => '',
+            'session_userId' => '',
+            'session_userName' => '',
+            'session_userDocument' => ''
         );
         $this->session->set_userdata($arraySessionData);
         $this->index();
@@ -292,9 +285,10 @@ class User extends CI_Controller {
     }
 
     public function facebookLogin() {
-        
+
         $MSG['Success'] = 'Login Successful using Facebook. Welcome to ConnectKarma!';
         $this->load->view('user/user', $MSG);
         $this->load->view('common/footer');
     }
+
 }

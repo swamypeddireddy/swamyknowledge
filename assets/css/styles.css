@@ -1,13 +1,15 @@
 *{margin:0; padding:0; text-decoration:none; font-family:sans-serif;  box-sizing: border-box;}
 .main{width:1170px; margin:0 auto;}
 body{color:#454545;}
+select option{padding:0 9px;}
 
 
 /* Header Starts */
 
+.m_top_34{margin-top:34px !important;}
 header{width:100%; float:left; border-top:2px solid #038AC7; margin-bottom:8px;}
-.logo{float:left; margin-top:10px;}
-.navigation{float:right; margin-top:36px;}
+.logo{float:left; margin-top:12px;}
+.navigation{float:right; margin-top:11px;}
 .navigation nav{width:100%; float:left;  position:relative;}
 .navigation nav ul{list-style-type:none;}
 .navigation nav ul li{display:inline-block; font-size:14px; }
@@ -17,12 +19,30 @@ header{width:100%; float:left; border-top:2px solid #038AC7; margin-bottom:8px;}
 .navigation nav ul li a:hover{color:#038AC7;}
 .nav_btn{display:none; color:#FFF; background:#479AC3; padding:0 8px; font-size:32px; float:right; margin:23px 0px 0 0;}
 
+
+
+/* profile logout start */
+
+.user_login{float:right; margin:0 0 0px 0; width:80%;}
+.user_login_ul{list-style-type:none; float:right;}
+.user_login_ul li{font-size:13px;}
+.user_login_ul li ul{list-style-type:none; position:absolute; top:39px; width:156px; background:#479AC3; margin:4px 0px 0px -25px; display:none; z-index:2;}
+.user_login_ul li ul li{border-bottom:1px solid #FFF; padding:14px 17px;}
+.user_login_ul li ul li a{color:#FFF;}
+.user_login_li{background:#479AC3; padding:2px 25px 0; color:#FFF; border-bottom:1px solid #FFF; cursor:pointer; position:relative;}
+.user_login_li:after{content:''; position:absolute; border-top:10px solid #FFF; border-right:10px solid transparent; border-left:10px solid transparent; border-bottom:10px solid transparent; top:41px; left:11px; z-index:5;}
+.user_login_li img{width:35px; height:35px;}
+.user_login_li b{font-weight:normal; float:left; margin:8px 11px 0 0;}
+
+/* profile logout ends */
+
+
 /* Header Ends */
 
 
 /* Section Starts */
 
-section{width:100%; float:left; background:#f0f0f0;}
+section{width:100%; float:left; background:#f0f0f0; padding-bottom:75px;}
 
 
 /* Login page Css Starts */
@@ -44,20 +64,6 @@ section{width:100%; float:left; background:#f0f0f0;}
 .login-home .register a{color:#fff;}
 .login-home .register a:hover{color:#454545;}
 
-
-/* Social login Css Starts 
-
-.social_login{width:100%; padding:0 27px; float:left;}
-.social_facebook{width:45px; height:45px; background:#4867AA; float:left; border-radius:100%; border:2px solid #FFF; margin-right:15px; cursor:pointer;}
-.social_facebook i{font-size:23px; display:block; text-align:center; margin:10px auto; color:#FFF;}
-.social_twitter{width:45px; height:45px; background:#00ACED; float:left; border-radius:100%; border:2px solid #FFF; margin-right:15px;  cursor:pointer;}
-.social_twitter i{font-size:23px; display:block; text-align:center; margin:10px auto; color:#FFF;}
-.social_linkedin{width:45px; height:45px; background:#0077B5; float:left; border-radius:100%; border:2px solid #FFF; margin-right:15px;  cursor:pointer;}
-.social_linkedin i{font-size:23px; display:block; text-align:center; margin:10px auto; color:#FFF;}
-.social_google{width:45px; height:45px; background:#EA4335; float:left; border-radius:100%; border:2px solid #FFF; margin-right:15px;  cursor:pointer;}
-.social_google i{font-size:23px; display:block; text-align:center; margin:10px auto; color:#FFF;}
-
-/* Social Login Css Ends */
 
 .login_left .social_login{width:90%;}
 
@@ -130,12 +136,13 @@ section{width:100%; float:left; background:#f0f0f0;}
 .al_login a{color:#454545;}
 .al_login a:hover{color:#FFF;}
 .m_top_less{margin:37px 0px 19px 90px;}
-
-
+.reg-home form .firstname .check_box{width:auto; margin:0 9px 0 0px;}
+.firstname_left{width:47%; float:left; margin:5px 0 0 12px;}
+.firstname_left_span{font-size:13px; color:#FFF; float:left; width:100%; margin-top:10px;}
+label{font-size:14px; float:left; width:100%; margin-left:5px;}
+label.white_label{color:#FFF; margin-top:15px;}
 
 /* Register Page Ends */
-
-
 
 
 
@@ -144,17 +151,18 @@ section{width:100%; float:left; background:#f0f0f0;}
 
 .referel-messages{width:100%; float:left; background:#7A919F ; padding:10px 0;}
 .referel{width:33%; float:left;}
+.referel p{float:left; color:#FFF; font-size:13px; margin:13px 16px 0px 0px;}
 .referel_img{width:70px; float:left; cursor:pointer;}
 .referel_img img{width:35px; height:35px; float:left;}
 .referel_img .ref_num{width:100%; float:left; font-size:14px; color:#FFF;}
 .referel_img:hover .ref_num{color:#000;}
 
-.knw_hub{width:35%; float:left; margin-top:10px;}
+.knw_hub{width:34%; float:left; margin-top:10px;}
 .knw_hub input{width:94%; float:left; outline:none; border:1px solid #CCC; padding:8px 38px 8px 8px; font-size:13px;}
 .knw_hub i{margin-left: -34px; margin-top: 0px; background: rgb(6, 139, 200) none repeat scroll 0% 0%; color: #FFF; padding: 9px;  cursor:pointer;}
 
 
-.message{float:right; cursor:pointer;}
+.messages{float:right; cursor:pointer;}
 .msg_img{width:60px; float:left;}
 .msg_img img{width:35px; height:35px; float:left;}
 .msg_img .msg_num{float:left; width:100%; color:#FFF; font-size:14px;}
@@ -162,7 +170,7 @@ section{width:100%; float:left; background:#f0f0f0;}
 .msg_img i{color:#BB1317; font-size:30px; margin-top:4px;}
 
 
-.user-information{width:100%; float:left; background:#f0f0f0; padding:45px 0;}
+.user-information{width:100%; float:left; padding:45px 0;}
 .user-search{width:20%; float:left; margin-right:20px;}
 .mentor_search{width:100%; float:left;}
 .mentor_search input{width:100%; float:left; padding:9px 37px 9px 9px; border:1px solid #CCC; outline:none;}
@@ -170,9 +178,9 @@ section{width:100%; float:left; background:#f0f0f0;}
 
 .mentor_prf{width:100%; float:left; border:1px solid #CCC; padding:0px; margin-top:25px;}
 
-.mentor_information{width:100%; float:left; margin-top:5px; padding:0 62px;}
+.mentor_information{width:100%; float:left; margin-top:5px; padding:0 20px;}
 .mentor_information .mentor_user{width:100%; float:left; margin:5px 0;}
-.mentor_information .mentor_user .mentor_user_img{ /* float:left; */}
+.mentor_information .mentor_user .mentor_user_img{float:left;}
 .mentor_information .mentor_user .mentor_user_img img{width:80px; height:80px; border:3px solid #CCC; float:left; border-radius:11px;}
 
 .mentor_information .mentor_user .yellow img{border:3px solid yellow;} 
@@ -188,22 +196,26 @@ section{width:100%; float:left; background:#f0f0f0;}
 .mentor_information .mentor_org .black img{border:3px solid black !important;} 
 
 
-.mentor_information .mentor_user .mentor_txt{width:100%; float:left; text-align:center; margin-top:5px; font-size:14px; line-height:21px;}
+.mentor_information .mentor_user .mentor_txt{width:100%; float:left; margin-top:5px; font-size:14px; line-height:21px;}
+.mentor_information .mentor_user .mentor_txt a{color:green;}
 
+/*
 .mentor_information .mentor_org{width:100%; float:left; margin:5px 0;}
-.mentor_information .mentor_org .mentor_org_img{/* float:left; */}
+.mentor_information .mentor_org .mentor_org_img{ float:left; }
 .mentor_information .mentor_org .mentor_org_img img{width:80px; height:80px; border:3px solid #CCC; border-radius:11px; float:left;}
 .mentor_information .mentor_org .mentor_txt{width:100%; float:left; text-align:center; font-size:14px; line-height:21px; margin-top:4px;}
+*/
 
-.prf_sm_img{float:left; width:21px; margin: 5px 0 0 3px;}
+.prf_sm_img{float:right; width:51%; margin: 5px 0 0 0px;}
 .prf_sm_img img{width:20px; height:20px; float:left; margin-bottom: 5px;}
-
+.prf_sm_img_inner{width:100%; float:left;}
+.num_prf{ font-size:12px; margin-left:5px; font-weight:normal;}
 
 
 .user-profile{width:51%; float:left; padding:0 25px; margin-top:63px;}
 .user-profile .user_prf{width:100%; float:left;}
-.user-profile .user-profile_txt{width:57%; float:left;}
-.user-profile .user-profile_txt p{width:100%; float:left; font-size:14px; line-height:27px; margin-top:8px;}
+.user-profile .user-profile_txt{width:100%; float:left;}
+.user-profile .user-profile_txt p{float:left; font-size:14px; line-height:27px; margin-top:8px;}
 .user-profile .user-profile_txt .new-para{margin-top:20px;}
 
 .user-profile .user-profile_right{width:35%; float:right;}
@@ -214,8 +226,11 @@ section{width:100%; float:left; background:#f0f0f0;}
 
 .ask_give{width:100%; float:left; margin-top:0px;}
 .prf_ask{width:100%; float:left; margin-top:15px;}
-.prf_ask h2{width:100%; float:left; font-size:18px; font-weight:normal; text-transform:uppercase;}
-.prf_ask select{ width:auto; float:left; outline:none; padding:9px; border:1px solid #CCC; font-size:12px; margin:10px 15px 0 0; -moz-appearance:none; -webkit-appearance:none; -o-appearance:none; background:#FFF url(../images/black_arrow1.png) no-repeat 90% center;}
+.prf_ask h2{float:left; font-size:18px; font-weight:normal; text-transform:uppercase;}
+.prf_ask select{ width:120px; float:left; outline:none; padding:9px; border:1px solid #CCC; font-size:12px; margin:10px 15px 0 0; -moz-appearance:none; -webkit-appearance:none; -o-appearance:none; background:#FFF url(../images/black_arrow1.png) no-repeat 90% center;}
+.prf_ask_btn{float:right; margin-top: 16px; font-size: 14px; background: #479AC3; color: #FFF; padding: 7px 30px; border-radius: 5px; cursor:pointer; border:1px solid #479AC3;}
+.prf_ask_btn:hover{background: #FFF; color: #479AC3; border:1px solid #479AC3;}
+
 
 .ask_input{width:100%; float:left;}
 .ask_input input{width:100%; float:left; padding:12px; font-size:14px; outline:none; border:1px solid #CCC;}
@@ -229,13 +244,13 @@ section{width:100%; float:left; background:#f0f0f0;}
 .user_ul ul li a{color:#479AC3;}
 
 .discuss_user{width:100%; float:left;}
-.discuss_user .discuss_user_left{width:80%; float:left; margin-top:20px;}
+.discuss_user .discuss_user_left{width:80%; float:left; margin-top:10px;}
 .discuss_user_img{width:25%; float:left;}
 .discuss_user_img img{width:45px; height:45px; margin-right:15px; border-radius:100%;}
 .discuss_user_txt{width:75%; float:left;}
 .discuss_user_txt h3{width:100%; float:left; font-size:14px; color:#479AC3; cursor:pointer;}
 .discuss_user_txt p{font-size:13px;}
-.dis_num{background:green; border:1px solid #FFF; text-align:center; padding:3px 5px; border-radius:9px; margin-right:5px; color:#FFF; float:left; font-size:12px;} 
+.dis_num{background:green; border:1px solid #FFF; text-align:center; padding:0px 5px; border-radius:9px; margin-right:5px; color:#FFF; float:left; font-size:12px;} 
 
 
 .discuss_user_right{width:19%; float:right; margin-top:25px;}
@@ -287,7 +302,7 @@ section{width:100%; float:left; background:#f0f0f0;}
   padding: 0;
 }
 .wrapper ul.tabs li {
-  border: gray solid 1px;
+  border: #CCC solid 1px;
   border-bottom: none;
   float: left;
   margin: 0px 12px 0px 0px;
@@ -316,11 +331,12 @@ article {
 }
 
 article ul{list-style-type:none;}
-article li{font-size:14px; line-height:25px; margin-top:8px; margin-left:22px; text-indent:-15px;}
-
+article li{font-size:14px; line-height:25px; margin-top:8px; margin-left:0px; text-indent:-8px;}
+article li a{color:#454545;}
+article li a:hover{color:#479AC3;}
 
 .list_arrow{}
-.list_arrow i{color:#479AC3; font-size:16px; margin-right:10px;}
+.list_arrow i{color:#479AC3; font-size:16px; margin-right:3px;}
 article p{font-size:14px; line-height:25px; margin-top:8px;}
 .wrapper h3{font-size:20px; font-weight:normal; color:#479AC3; text-transform:uppercase; margin-bottom:46px;}
 .wrapper .wrapper_search{float:right;}
@@ -345,7 +361,7 @@ article p{font-size:14px; line-height:25px; margin-top:8px;}
 .profile_extratxt input{width:100%; float:left; padding:10px 15px; font-size:14px; outline:none; border:1px solid #CCC; background: #FFF url(../images/black_arrow1.png) no-repeat 97% center; cursor:pointer;}
 
 
-.profile_extratxt .profile_option{width:80%; float:left; border:1px solid #CCC; background:#FFF; padding:15px;}
+.profile_extratxt .profile_option{width:100%; float:left; border:1px solid #CCC; background:#FFF; padding:15px;}
 .profile_extratxt .profile_option ul{list-style-type:none;}
 .profile_extratxt .profile_option ul li{font-size:14px; margin-left:22px; text-indent:-15px;}
 
@@ -413,14 +429,15 @@ article p{font-size:14px; line-height:25px; margin-top:8px;}
 
 /* Feedback Page Starts */
 
-.feedback_page{width:100%; float:left; background:#f0f0f0; min-height:555px; padding:45px 0;}
-.feedback_form{width:34%; margin:100px auto 0; background:#FFF; padding:35px; height:316px;}
+.feedback_page{width:100%; float:left; min-height:555px; padding:45px 0;}
+.feedback_form{width:34%; margin:100px auto 0; display:block;}
+.feedback_form_inner{width:100%; float:left; background:#FFF; padding:35px;}
 .feedback_form h2{width:100%; float:left; font-size:20px; text-transform:uppercase; color:#479AC3; font-weight:normal; margin:0 0 25px; text-align:center;}
 
 .feedback_form form{width:100%; float:left;}
 .feedback_form form .firstname input{width:93%; float:left; outline:none; padding:8px 15px; border:1px solid #CCC; font-size:14px;}
 .feedback_form form textarea{width:93%; float:left; outline:none; padding:8px 15px; border:1px solid #CCC; font-size:14px; resize:none; height:50px; margin:10px 0;}
-.feedback_form form .feed_submit{width:100px; float:right; outline:none; padding:8px 15px; border:1px solid #479AC3; font-size:14px; margin-top:15px; background:#479AC3; color:#FFF; text-align:center; text-transform:uppercase; cursor:pointer;}
+.feedback_form form .feed_submit{width:100px; float:right; outline:none; padding:8px 15px; border:1px solid #479AC3; font-size:14px; margin-top:15px; background:#479AC3; color:#FFF; text-align:center; text-transform:uppercase; cursor:pointer; border-radius:5px;}
 .feedback_form form .feed_submit:hover{background:#FFF; border:1px solid #479AC3; color:#479AC3;}
 .feedback_form form .smiley_icons{width:58%; margin:180px auto 0px;}
 .feedback_form form .smiley_icons img{width:30px; height:30px; margin-right:15px; cursor:pointer; float:left;}
@@ -431,17 +448,94 @@ article p{font-size:14px; line-height:25px; margin-top:8px;}
 /* Feedback Page Ends */
 
 
+/* Edit Profile Page Starts */
+
+
+.user-information form{width:100%; float:left;}
+.user-information .edit_profile_left{width:47%; float:left;}
+.user-information .edit_profile_left .firstname{width:100%; float:left; margin-top:15px;}
+.user-information .edit_profile_left .firstname input{width:100%; float:left; padding:15px; border:1px solid #CCC; outline:none; font-size:14px; border-radius:5px; margin-top:0px;  background:#FFF;}
+.user-information .edit_profile_left .firstname textarea{width:100%; float:left; padding:15px; border:1px solid #CCC; outline:none; font-size:14px; border-radius:5px; margin-top:0px;  background:#FFF; resize:none;}
+
+.user-information .edit_profile_right{float:right;}
+.user-information .edit_profile_right ul{list-style-type:none; float:left; margin:0px 0 0px 25px;}
+.user-information .edit_profile_right ul li{font-size:14px; margin-top:8px;}
+.firstname_btn{width:100%; float:left; margin-top:45px;}
+.firstname_btn button{width:260px; margin:0 auto; display:block; font-size:14px; padding:12px 18px; outline:none; border:1px solid #479AC3; cursor:pointer; border-radius:5px; background:#479AC3; color:#FFF;}
+.firstname_btn button:hover{background:#FFF; color:#479AC3; border:1px solid #479AC3;}
+
+
+/* Edit Profile Page Ends */
+
+
+/* Mentor profile Popup starts */
+
+.mentor_popup{position:fixed; top:0; bottom:0; left:0; right:0; background:rgba(0,0,0,0.5); z-index:100; display:none;}
+.mentor_popup_inner{width:50%; margin:0 auto; position:fixed; top:20%; background:#f0f0f0; padding:25px 35px 45px; right:0; left:0;}
+.mentor_popup_inner:after{content:''; position:absolute; left:5px; top:5px; border-top:10px solid #479AC3; border-bottom:10px solid transparent; border-left:10px solid #479AC3; border-right:10px solid transparent;}
+.mentor_popup_inner:before{content:''; position:absolute; right:5px; bottom:5px; border-top:10px solid transparent; border-bottom:10px solid #479AC3; border-left:10px solid transparent; border-right:10px solid #479AC3;}
+
+
+.mentor_popup_close{float:right; cursor:pointer; font-size:19px;}
+.mentor_popup_left{width:100%; float:left;}
+.mentor_popup_left .mentor_popup_profile{width:100%; float:left;}
+.mentor_popup_profile span{font-size:14px; margin-top:15px; float:left;}
+.mentor_popup_profile span b{margin-right:7px;}
+.mentor_popup_profile ul{list-style-type:none; float:left; width:100%; margin-left:25px;}
+.mentor_popup_profile ul li{font-size:13px; margin-top:8px;}
+.mentor_popup_right{float:right;}
+.go_profile{float:right; font-size:14px; background:#479AC3; border:1px solid #479AC3; padding:8px 30px; border-radius:5px;}
+.go_profile a{color:#FFF;}
+.go_profile:hover{background:#FFF; border:1px solid #479AC3;}
+.go_profile:hover a{color:#479AC3;}
+
+
+/* Mentor profile Popup ends */
+
+
+/* discuss tabs starts */
+
+.user-discussion-tabs{width:100%; float:left; margin-top:19px;}
+.user-discussion-tabs ul{list-style-type:none; border-bottom:4px solid #CCC; padding-bottom:4px; margin-bottom:10px;} 
+.user-discussion-tabs ul li{display:inline-block; font-size:13px; padding-right:14px;}
+.user-discussion-tabs ul li a{color:#479AC3;}
+.user-discussion-tabs .block{width:100%; float:left; border:none; padding:0;}
+.user-discussion-tabs .block article{padding:0;}
+.user-discussion-tabs .block article p{line-height:18px;}
+
+/* discuss tabs ends */
+
+
+/* Profile post starts */
+
+.profile_post{width:100%; float:left; margin-top:20px; background:#FFF; padding:25px;}
+.profile_post_head{width:100%; float:left;}
+.profile_post_head .profile_post_head_logo{float:left; margin-right:5px;}
+.profile_post_head .profile_post_head_logo img{width:40px; height:40px; margin-top:-10px;}
+.profile_post_head .profile_post_head_cont{float:left; font-size:14px;}
+.profile_post_head_contp{font-size:12px; margin-top:5px; width:100%; float:left;}
+.profile_post_head h2{width:100%; float:left; font-size:15px; margin:15px 0 20px; font-weight:normal;}
+.profile_post_body{width:100%; float:left;}
+.profile_post_body_img {width:100%; float:left; margin:0px 0 5px}
+.profile_post_body_img img{width:300px; height:300px;}
+.profile_post_body_left{float:left; font-size:13px;}
+.profile_post_body_left img{width:15px; height:15px; float:left;}
+.profile_post_body_right{float:right; font-size:13px;}
+.profile_post_bottom{width:100%; float:left; border-top:1px solid #CCC; margin-top:10px;}
+.profile_post_like{float:left; margin-right:19px; font-size:13px; color:#AFB4BD; margin-top:15px; font-weight:bold;}
+
+
+
+/* Profile post ends */
 
 /* Sections Ends */
-
-
 
 
 
 /* Footer Start */
 
 
-footer{width:100%; float:left; background:#454545; padding:25px 0;}
+footer{width:100%; float:left; background:#454545; padding:25px 0; position:fixed; bottom:0;}
 footer .foot_div{width:100%; float:left;}
 .foot_div p{color:#FFF; text-align:center; font-size:13px;}
 
@@ -458,20 +552,25 @@ footer .foot_div ul li a:hover{color:#479AC3;} */
 /* Responsive Stats */
 
 @media only screen and (max-width: 1199px) {
-	.bg_section{padding-left:15px; padding-right:15px;}
+  .main{width:100%; padding:0 15px;}
+	/* .bg_section{padding-left:15px; padding-right:15px;} */
 }
 
 @media only screen and (max-width: 992px) {
-	.main{width:100%; padding:0 30px;}
+	.main{width:100%; padding:0 15px;}
 	.login-home{width:76%;}
 	.reg-home {width:100%;}
 	.all_emails{width:100%; padding:20px;}
-	.mentor_information{padding:0 39px;}
+	.mentor_information{padding:0 9px;}
 	.feedback_form{width:100%;}
 	.wrapper{width:100%; padding:25px;}
 	.block{width:100%; padding:15px;}
 	.prf_sm_img{width:auto;}
 	.data-map, .data-graph{width:100%;}
+  .user-information .edit_profile_left{width:100%;}
+  .referel p{width:100%; margin:0;}
+  .mentor_popup_inner{width:80%;}
+  .user_login{width:71%;}
 	
 }
 
@@ -488,15 +587,18 @@ footer .foot_div ul li a:hover{color:#479AC3;} */
 	.login_left .social_login{width:70%;}
 	.social_login{width:70%;}
 	.referel, .knw_hub{width:30%;}
-	.mentor_information{padding:0 9px;}
 	.user-profile{width:72%;}
 	.user-discussion{width:100%; float:left;}
+  .reg-home-inner{padding:15px;}
+  .referel_img{width:67px;}
+  .user_login{width:70%;}
+
 	
 }
 
 @media only screen and (max-width: 601px) {
 	.referel, .knw_hub{width:45%; margin-bottom:25px;}
-	.message{float:none;}
+	.messages{float:none;}
 
 }
 
@@ -509,8 +611,9 @@ footer .foot_div ul li a:hover{color:#479AC3;} */
 	.social_login ul li{margin-right:9px;}
 	.social_login{width:100%;}
 	.user-search, .user-profile{width:100%; padding:0;}
-	.mentor_information{padding:0 174px;}
+	.mentor_information{padding:0px 106px;}
 	.wrapper .wrapper_search{width:100%; margin-bottom:25px;}
+  .mentor_popup_inner{width:90%; padding:25px 15px 35px;}
 
 }
 
@@ -519,7 +622,12 @@ footer .foot_div ul li a:hover{color:#479AC3;} */
 	.referel, .knw_hub{width:100%;}
 	.mentor_information{padding:0 124px;}
 	.user-profile .user-profile_txt, .user-profile .user-profile_right{width:100%; margin-top:20px;}
+  .firstname_left{width:100%;}
+  .wrapper ul.tabs li{padding:6px 13px; font-size:12px;}
+  .user_login{width:43%;}
+
 }
 @media only screen and (max-width: 320px) {
 	.mentor_information{padding:0 75px;}
+  .wrapper ul.tabs li{padding:6px 11px; font-size:11px;}
 }
