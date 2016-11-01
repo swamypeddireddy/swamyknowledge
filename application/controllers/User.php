@@ -182,6 +182,7 @@ class User extends CI_Controller {
         if (NULL == $_POST) {
 
             $arrCategories['groups'] = $this->db->select('id, category_name')->from('categories')->get()->result_array();
+            $this->load->view('common/header');
             $this->load->view('home/register', $arrCategories);
             $this->load->view('common/footer');
         } elseif (NULL != $_POST && $_POST['submit'] == 'submit') {

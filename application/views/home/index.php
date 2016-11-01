@@ -77,7 +77,7 @@
 
                     $('.div_MSG_Email_ERROR').attr('class', 'firstname');
                     $('#MSG_Email_ERROR').css('color', 'DarkRed');
-                    document.getElementById('MSG_Email_ERROR').innerHTML = "Invalid User! User with this email id does not exists.";
+                    document.getElementById('MSG_Email_ERROR').innerHTML = "Invalid User! email id does not exists.";
                     return (true);
                 }
             });

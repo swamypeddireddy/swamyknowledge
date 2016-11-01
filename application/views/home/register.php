@@ -35,25 +35,24 @@
                         <div class="firstname"><input id="repassword" value="" type="password" name="password" placeholder="Re-enter your user password" required></div>
                         <div class="div_MSG_Passwordchk_ERROR"><br><div id="MSG_Passwordchk_ERROR"></div></div>
                         
-                            <?php //echo'<pre>';print_r($groups);echo'</pre>';
-                                //echo sizeof($groups);
-                            ?>
-                            <?php
-
-                                foreach($groups as $key => $group) {
+                        <div class="firstname">
+                            <label class="white_label">Select Group</label>
+                            <?php foreach($groups as $key => $group) {
                                     if($key%2   == 0) {?>
                                         <div class="firstname_left" id="evenCategory">
                                             <span class="firstname_left_span"><input type="checkbox" value="<?php echo $group['id'];?>" class="check_box"/><?php echo $group['category_name'];?></span>                                            
-                                        </div>
+                                        
                                     <?php } else {?>
                                         <div class="firstname_left" id="oddCategory">
                                             <span class="firstname_left_span"><input type="checkbox" value="<?php echo $group['id'];?>" class="check_box"/><?php echo $group['category_name'];?></span>
-                                        </div>
+
                                     <?php }?>
+                                    </div>
                             <?php }?>
                             <input type="hidden" id="categories" name="categories" value=""/>
+                        </div>
 
-<!--                        <div class="firstname">
+                        <!--                        <div class="firstname">
                             <label class="white_label">Select Group</label>
                             <div class="firstname_left">
                                 <span class="firstname_left_span"><input type="checkbox" name="it_software" value="" class="check_box"/>IT Software</span>
@@ -73,7 +72,7 @@
 
 <!--                        <div class="firstname"><input type="file" name="userfile" value="" required></div>-->
                         <div class="btn_login"><button type="submit" name="submit" value="submit" formaction="<?php echo base_url('index.php/User/register/'); ?>">Signup</button></div>
-                        <div class="al_login">Already registred, please <a href="index.html">Login</a> here.</div>
+                        <div class="al_login">Already registred, please <a href="<?php echo base_url();?>">Login</a> here.</div>
                     </form>
                 </div>
             </div>
