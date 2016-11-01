@@ -1,5 +1,3 @@
-<section>
-
     <?php if (isset($Success) && $Success != '') { ?>
         <div class="messagesphp">
             <div class="successphp" id="SUCCESS"><?php echo $Success; ?></div>
@@ -14,8 +12,6 @@
             <div class="errorphp" id="ERROR"></div>-->
         </div>
     <?php } ?>
-
-
 
     <div class="user-information">
         <div class="main">

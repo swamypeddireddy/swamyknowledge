@@ -34,7 +34,26 @@
 
                         <div class="firstname"><input id="repassword" value="" type="password" name="password" placeholder="Re-enter your user password" required></div>
                         <div class="div_MSG_Passwordchk_ERROR"><br><div id="MSG_Passwordchk_ERROR"></div></div>
-                        <div class="firstname">
+                        
+                            <?php //echo'<pre>';print_r($groups);echo'</pre>';
+                                //echo sizeof($groups);
+                            ?>
+                            <?php
+
+                                foreach($groups as $key => $group) {
+                                    if($key%2   == 0) {?>
+                                        <div class="firstname_left" id="evenCategory">
+                                            <span class="firstname_left_span"><input type="checkbox" value="<?php echo $group['id'];?>" class="check_box"/><?php echo $group['category_name'];?></span>                                            
+                                        </div>
+                                    <?php } else {?>
+                                        <div class="firstname_left" id="oddCategory">
+                                            <span class="firstname_left_span"><input type="checkbox" value="<?php echo $group['id'];?>" class="check_box"/><?php echo $group['category_name'];?></span>
+                                        </div>
+                                    <?php }?>
+                            <?php }?>
+                            <input type="hidden" id="categories" name="categories" value=""/>
+
+<!--                        <div class="firstname">
                             <label class="white_label">Select Group</label>
                             <div class="firstname_left">
                                 <span class="firstname_left_span"><input type="checkbox" name="it_software" value="" class="check_box"/>IT Software</span>
@@ -50,9 +69,10 @@
                                 <span class="firstname_left_span"><input type="checkbox" name="clothing_business" value="" class="check_box"/>Clothing Business</span>
                                 <span class="firstname_left_span"><input type="checkbox" name="steel_constructions" value="" class="check_box"/>Steel Constructions</span>
                             </div>
-                        </div>
+                        </div>-->
+
 <!--                        <div class="firstname"><input type="file" name="userfile" value="" required></div>-->
-                        <div class="btn_login"><button type="submit" name="" value="" formaction="<?php echo base_url('index.php/User/register/'); ?>">Signup</button></div>
+                        <div class="btn_login"><button type="submit" name="submit" value="submit" formaction="<?php echo base_url('index.php/User/register/'); ?>">Signup</button></div>
                         <div class="al_login">Already registred, please <a href="index.html">Login</a> here.</div>
                     </form>
                 </div>
@@ -75,9 +95,22 @@
         }, 500);
     });
 
-    $("#email").focusout(function () {
+    var list = [];
+    $("#evenCategory .check_box, #oddCategory .check_box").each(function(index) {
+        $(this).on("click", function() {
 
+            if('-1' == $.inArray(this.value, list)) {
+                list.push(this.value);
+            } else {
+                list.splice($.inArray(this.value, list), 1);
+            }
+            $('#categories').attr('value', list);
+        });
+    });
+
+    $("#email").focusout(function () {
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($("#email").val())) {
+
             //check if email address already exists or not.
             $.ajax({
 

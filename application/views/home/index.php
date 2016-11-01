@@ -1,4 +1,3 @@
-<section>
     <?php if(isset($Success) && $Success != '') { ?>
         <div class="messagesphp">
             <!--<div class="infophp" id="INFO"></div>-->
@@ -7,6 +6,7 @@
             <div class="errorphp" id="ERROR"></div>-->
         </div>
     <?php } ?>
+
     <div class="bg_section">
 
         <div class="main container">
@@ -28,8 +28,10 @@
                     </div>
 
                     <form method="POST">
+
+                        <div class="firstname"><input type="text" id="email" name="email_id" placeholder="Enter your email id" required></div>
+                        <div class="div_MSG_Email_ERROR"><br><div id="MSG_Email_ERROR"></div></div>
                         
-                        <div class="firstname"><input type="text" name="firstname" placeholder="Enter your user name" required></div>
                         <div class="firstname"><input type="password" name="password" placeholder="Enter your user password" required></div>
                         <div class="btn_login"><button type="submit" name="" value="" formaction="<?php echo base_url('index.php/User/index');?>">Login</button></div>
                         
@@ -50,6 +52,45 @@
         </div>
 
     </div>
-
 </section>
+
 <script src="<?php echo base_url('/assets/'); ?>js/social_media_login.js"></script>
+<script>
+    $("#email").focusout(function () {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($("#email").val())) {
+            
+            //check if email address already exists or not.
+            $.ajax({
+
+                method: "POST",
+                dataType: "JSON",
+                url: "<?php echo base_url('user/checkEmailAddressExists');?>",
+                data: { email: $("#email").val()}
+            }).done(function( msg ) {
+                if(1    == msg) {
+
+                    $('.div_MSG_Email_ERROR').attr('class', 'firstname');
+                    $('#MSG_Email_ERROR').css('color', '#193300');
+                    document.getElementById('MSG_Email_ERROR').innerHTML = "Congracts, User Exists!";
+                    return (true);
+                } else if(0    == msg) {
+
+                    $('.div_MSG_Email_ERROR').attr('class', 'firstname');
+                    $('#MSG_Email_ERROR').css('color', 'DarkRed');
+                    document.getElementById('MSG_Email_ERROR').innerHTML = "Invalid User! User with this email id does not exists.";
+                    return (true);
+                }
+            });
+        } else if('' == $("#email").val()) {
+            
+            $('.div_MSG_Email_ERROR').attr('class', 'firstname');
+            $('#MSG_Email_ERROR').css('color', 'DarkRed');
+            document.getElementById('MSG_Email_ERROR').innerHTML = "Email address can not be Empty!";
+        } else {
+
+            $('.div_MSG_Email_ERROR').attr('class', 'firstname');
+            $('#MSG_Email_ERROR').css('color', 'DarkRed');
+            document.getElementById('MSG_Email_ERROR').innerHTML = "You have entered an invalid email address!";
+        }
+    });
+</script>
