@@ -48,7 +48,6 @@ class User extends CI_Controller {
                         //create session
                         if ('connected' == $_POST['status']) {
                             $arraySessionData = array(
-                                
                                 'social_login_status' => 1,
                                 'session_userId' => '',
                                 'session_userName' => $_POST['socialMediaLoginName'],
@@ -66,7 +65,6 @@ class User extends CI_Controller {
                             //echo'usr not registered, registering user';
                             //register in social_media_logins
                             $queryInsertSocialMediaLogin = array(
-                                
                                 'social_media_type_id' => $socialMediaTypeData->id,
                                 'social_media_user_id' => $_POST['id'],
                                 'social_media_username' => $_POST['socialMediaLoginName'],
@@ -102,13 +100,13 @@ class User extends CI_Controller {
                         //$this->index();
 
                         $reponceData = array(
-                            
                             'Success' => 'Login Successful using Facebook. Welcome to ConnectKarma!',
                             'baseURL' => base_url() . 'index.php/',
                             'controller' => 'user',
                             'action' => 'facebookLogin'
                         );
-                        echo json_encode($reponceData);exit;
+                        echo json_encode($reponceData);
+                        exit;
 
                         //$MSG['Success'] = 'Login Successful using Facebook. Welcome to ConnectKarma!';
                         //$this->load->view('user/user', $MSG);
@@ -151,7 +149,6 @@ class User extends CI_Controller {
                 if ($queryNumRows === 1) {
 
                     $arraySessionData = array(
-                        
                         'social_login_status' => '',
                         'session_userId' => $queryRowArray['id'],
                         'session_userName' => $queryRowArray['firstname'],
@@ -174,22 +171,22 @@ class User extends CI_Controller {
 
         $arrWhere = array('email' => $_POST['email']);
         $queryResult = $this->db->select('*')->from('user_registrations')->where($arrWhere)->get()->num_rows();
-        echo json_encode($queryResult);exit;
+        echo json_encode($queryResult);
+        exit;
     }
 
     public function register($data = null) {
 
         if (NULL == $_POST) {
 
-            $arrCategories['groups'] = $this->db->select('id, category_name')->from('categories')->get()->result_array();
+            $arrCategories['groups'] = $this->db->select('id, category_name')->from('business_categories')->get()->result_array();
             $this->load->view('common/header');
             $this->load->view('home/register', $arrCategories);
             $this->load->view('common/footer');
         } elseif (NULL != $_POST && $_POST['submit'] == 'submit') {
 
-            echo'<pre>';print_r($_POST);echo'</pre>';exit;
+            //echo'<pre>';print_r($_POST);echo'</pre>';exit;
             $data = array(
-                
                 'firstname' => $_POST['firstname'],
                 'email' => $_POST['email'],
                 'password' => md5($_POST['password']),
@@ -235,7 +232,7 @@ class User extends CI_Controller {
                 'social_login_status' => '',
                 'session_userId' => $userId,
                 'session_userName' => $_POST['firstname']
-//                                'session_userDocument' => $target_dir . '/' . $_FILES['userfile']['name']
+                    //'session_userDocument' => $target_dir . '/' . $_FILES['userfile']['name']
             );
             //$this->session->sess_expiration = '900';
             $this->session->set_userdata($arraySessionData);
@@ -328,6 +325,32 @@ class User extends CI_Controller {
     public function facebookLogin() {
 
         $MSG['Success'] = 'Login Successful using Facebook. Welcome to ConnectKarma!';
+
+        $this->load->view('common/header');
+        $this->load->view('user/user', $MSG);
+        $this->load->view('common/footer');
+    }
+
+    public function twitterLogin() {
+
+        //echo'logged in twitter';exit;
+//        $CONSUMER_KEY='PkzEK1tvOWCATgyk4R3uvEaWs';
+//        $CONSUMER_SECRET='xqnOCsTLKITYCORsDIQOThjNh9ROXdf4hxekWzd3sJlaxLDBKr';
+//        $OAUTH_CALLBACK='http://172.16.4.126/ckfirst/index.php/User/index';
+//
+//        $connection = new TwitterOAuth($CONSUMER_KEY, $CONSUMER_SECRET);
+//        $request_token = $connection->getRequestToken($OAUTH_CALLBACK); //get Request Token
+//        $MSG['Success'] = 'Login Successful using Facebook. Welcome to ConnectKarma!';
+        $reponceData = 1;
+//                array(
+//            
+//            'Success' => 'Login Successful using Facebook. Welcome to ConnectKarma!',
+//            'baseURL' => base_url() . 'index.php/',
+//            'controller' => 'user',
+//            'action' => 'facebookLogin'
+//        );
+        echo json_encode($reponceData);
+        exit;
 
         $this->load->view('common/header');
         $this->load->view('user/user', $MSG);

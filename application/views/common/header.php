@@ -28,7 +28,7 @@
         <header>
             <div class="main">
                 <?php if (true == $this->session->userdata('session_userId') || true == $this->session->userdata('social_login_status')) { ?>
-                    
+
                     <div class="user_login">
                         <ul class="user_login_ul">
                             <li class="user_login_li"><b>Welcome</b> <img src="<?php echo base_url('/assets/'); ?>images/user7.jpg" alt="ProfilePic"/> 
@@ -46,27 +46,27 @@
 
                 <?php if (true == $this->session->userdata('session_userId') || true == $this->session->userdata('social_login_status')) { ?>
                     <div class="navigation">
-                <?php } else {?>
-                    <div class="navigation m_top_34">
-                <?php };?>
-                
-                    <nav class="nav_fade">
-                        <ul>
-                            <li><a href="<?php echo base_url('index.php/DataAnalytics/'); ?>">Data Analytic</a> <span>/</span></li>
-                            <li><a href="<?php echo base_url('index.php/Event/'); ?>">Event</a> <span>/</span></li>
-                            <li><a href="<?php echo base_url('index.php/About/'); ?>">About</a> <span>/</span></li>
-                            <li><a href="<?php echo base_url('index.php/Blog/createPost'); ?>">Blog</a><span>/</span></li>
-                            <!--<li><a href="<?php //echo base_url('index.php/News');          ?>">News</a></li>-->
-                            <li><a href="<?php echo base_url('index.php/Contact/'); ?>">Contact</a><span></span></li>
-                            <!--                            <li>
-                                                            <a id="User_Register" href="<?php //echo base_url('index.php/User/register');   ?>">User Register</a>
-                                                            <a id="Logout" href="<?php //echo base_url('index.php/User/Logout');   ?>">Logout</a>
-                                                        </li>-->
-                        </ul>
-                    </nav>
-                </div>
+                    <?php } else { ?>
+                        <div class="navigation m_top_34">
+                        <?php }; ?>
 
-            </div>
+                        <nav class="nav_fade">
+                            <ul>
+                                <li><a href="<?php echo base_url('index.php/DataAnalytics/'); ?>">Data Analytic</a> <span>/</span></li>
+                                <li><a href="<?php echo base_url('index.php/Event/'); ?>">Event</a> <span>/</span></li>
+                                <li><a href="<?php echo base_url('index.php/About/'); ?>">About</a> <span>/</span></li>
+                                <li><a href="<?php echo base_url('index.php/Blog/createPost'); ?>">Blog</a><span>/</span></li>
+                                <!--<li><a href="<?php //echo base_url('index.php/News');           ?>">News</a></li>-->
+                                <li><a href="<?php echo base_url('index.php/Contact/'); ?>">Contact</a><span></span></li>
+                                <!--                            <li>
+                                                                <a id="User_Register" href="<?php //echo base_url('index.php/User/register');    ?>">User Register</a>
+                                                                <a id="Logout" href="<?php //echo base_url('index.php/User/Logout');    ?>">Logout</a>
+                                                            </li>-->
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
         </header>
 
         <section>
@@ -108,4 +108,4 @@
                         </div>
                     </div>
                 </div>
-            <?php };?>
+            <?php }; ?>

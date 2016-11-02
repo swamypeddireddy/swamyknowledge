@@ -23,7 +23,7 @@
                         </ul>
                     </div>
 
-                    <form method="POST" enctype="multipart/form-data">
+                    <form method="POST" id="register" enctype="multipart/form-data">
                         <div class="firstname"><input id="firstname" value="" type="text" name="firstname" placeholder="Enter your user name" required></div>
 
                         <div class="firstname"><input id="email" value="" type="email" name="email" placeholder="Enter your Email" required></div>
@@ -31,22 +31,24 @@
 
                         <div class="firstname"><input id="password" value="" type="password" name="password" placeholder="Enter your user password" required></div>
                         <div class="div_MSG_Password_ERROR"><br><div id="MSG_Password_ERROR"></div></div>
+                        <div class="div_MSG_Pass_ERROR"><br><div id="MSG_Pass_ERROR"></div></div>
 
                         <div class="firstname"><input id="repassword" value="" type="password" name="password" placeholder="Re-enter your user password" required></div>
                         <div class="div_MSG_Passwordchk_ERROR"><br><div id="MSG_Passwordchk_ERROR"></div></div>
                         
                         <div class="firstname">
                             <label class="white_label">Select Group</label>
+                            <div class="div_MSG_GROUP_ERROR"><br><div id="MSG_GROUP_ERROR"></div></div>
                             <?php foreach($groups as $key => $group) {
-                                    if($key%2   == 0) {?>
-                                        <div class="firstname_left" id="evenCategory">
-                                            <span class="firstname_left_span"><input type="checkbox" value="<?php echo $group['id'];?>" class="check_box"/><?php echo $group['category_name'];?></span>                                            
-                                        
-                                    <?php } else {?>
-                                        <div class="firstname_left" id="oddCategory">
-                                            <span class="firstname_left_span"><input type="checkbox" value="<?php echo $group['id'];?>" class="check_box"/><?php echo $group['category_name'];?></span>
+                                if($key%2   == 0) {?>
+                                    <div class="firstname_left" id="evenCategory">
+                                        <span class="firstname_left_span"><input type="checkbox" value="<?php echo $group['id'];?>" class="check_box"/><?php echo $group['category_name'];?></span>                                            
 
-                                    <?php }?>
+                                <?php } else {?>
+                                    <div class="firstname_left" id="oddCategory">
+                                        <span class="firstname_left_span"><input type="checkbox" value="<?php echo $group['id'];?>" class="check_box"/><?php echo $group['category_name'];?></span>
+
+                                <?php }?>
                                     </div>
                             <?php }?>
                             <input type="hidden" id="categories" name="categories" value=""/>
@@ -71,7 +73,7 @@
                         </div>-->
 
 <!--                        <div class="firstname"><input type="file" name="userfile" value="" required></div>-->
-                        <div class="btn_login"><button type="submit" name="submit" value="submit" formaction="<?php echo base_url('index.php/User/register/'); ?>">Signup</button></div>
+                        <div class="btn_login"><button type="submit" name="submit" value="submit" onclick="submit();">Signup</button></div>
                         <div class="al_login">Already registred, please <a href="<?php echo base_url();?>">Login</a> here.</div>
                     </form>
                 </div>
@@ -80,18 +82,23 @@
 </section>
 
 <style>
-    #MSG_Passwordchk_ERROR #MSG_Email_ERROR #MSG_Password_ERROR {
+    #MSG_Passwordchk_ERROR #MSG_Email_ERROR #MSG_Password_ERROR #MSG_Pass_ERROR{
         display:none;
     }
 </Style>
 
 <script>
-    $(".submit").click(function () {
-        setTimeout(function () {
+    $('#register').submit(function() {
+        
+        if(''   == $('#categories').val()) {
 
-            alert('clicked');
-            window.location = "<?php echo base_url('User/register'); ?>";
-        }, 500);
+            $('.div_MSG_GROUP_ERROR').attr('class', 'firstname');
+            $('#MSG_GROUP_ERROR').css('color', 'DarkRed');
+            document.getElementById('MSG_GROUP_ERROR').innerHTML = "Groups can not be empty! Please check atleast one group.";
+            return false;
+        } else {
+            formaction  = "<?php echo base_url('index.php/User/register/'); ?>"
+        }
     });
 
     var list = [];
@@ -145,11 +152,17 @@
         if ('' == $('#password').val()) {
             
             $('.div_MSG_Password_ERROR').attr('class', 'firstname');
-            $('#MSG_Password_ERROR').css('color', 'DarkYellow');
+            $('#MSG_Password_ERROR').css('color', 'DarkRed');
             document.getElementById('MSG_Password_ERROR').innerHTML = "Password can not be Empty";
+        } else if('5' >= $('#password').val().length || '16'  < $('#password').val().length) {
+            
+            $('.div_MSG_Pass_ERROR').attr('class', 'firstname');
+            $('#MSG_Pass_ERROR').css('color', 'DarkRed');
+            document.getElementById('MSG_Pass_ERROR').innerHTML = "Password length must be in between 6 to 16 characters.";
         } else {
-
+            
             $('#MSG_Password_ERROR').remove();
+            $('#MSG_Pass_ERROR').remove();
         }
     });
 
@@ -158,7 +171,7 @@
         if ('' == $('#password').val() && '' == $('#repassword').val()) {
 
             $('.div_MSG_Passwordchk_ERROR').attr('class', 'firstname');
-            $('#MSG_Passwordchk_ERROR').css('color', 'DarkYellow');
+            $('#MSG_Passwordchk_ERROR').css('color', 'DarkRed');
             document.getElementById('MSG_Passwordchk_ERROR').innerHTML = "Confirm Password can not be Empty";
         } else if ($('#password').val() !== $('#repassword').val()) {
             
