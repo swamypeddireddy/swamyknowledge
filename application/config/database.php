@@ -82,7 +82,7 @@ $db['default'] = array(
     'database' => 'ckfirst',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
-    'pconnect' => FALSE,
+    'pconnect' => True,
     'db_debug' => (ENVIRONMENT !== 'production'),
     'cache_on' => FALSE,
     'cachedir' => '',

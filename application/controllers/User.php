@@ -6,6 +6,7 @@ if (!defined('BASEPATH'))
 class User extends CI_Controller {
 
     function __construct() {
+
         parent::__construct();
     }
 
@@ -162,6 +163,13 @@ class User extends CI_Controller {
                     $this->load->view('common/header');
                     $this->load->view('user/user', $MSG);
                     $this->load->view('common/footer');
+                } else {
+                    
+                    $MSG['Success'] = '<br>UserId and Password does not match, Authentication Failure!';
+
+                    $this->load->view('common/header');
+                    $this->load->view('home/index', $MSG);
+                    $this->load->view('common/footer');
                 }
             }
         }
@@ -185,13 +193,17 @@ class User extends CI_Controller {
             $this->load->view('common/footer');
         } elseif (NULL != $_POST && $_POST['submit'] == 'submit') {
 
+            //load required models
+            $this->load->model('UserModel');
+            $this->load->model('EmailModel');
+
             //echo'<pre>';print_r($_POST);echo'</pre>';exit;
             $data = array(
                 'firstname' => $_POST['firstname'],
                 'email' => $_POST['email'],
                 'password' => md5($_POST['password']),
-                'categories' => $_POST['categories'],
-                'created_on' => 'NOW()'
+                'business_category_ids' => $_POST['categories'],
+                'created_on' => 'now()'
             );
 
             if (true == $this->db->insert('user_registrations', $data)) {
@@ -221,9 +233,13 @@ class User extends CI_Controller {
             //$this->load->view('common/footer');
             //set session data
 
+            $verificationCode = substr(md5(uniqid(rand(), true)), 16, 16);
+            //$this->sendVerificationEmail($_POST['email'], $verificationCode);exit;
+
             $data = array(
                 'created_by' => $userId,
-                'updated_by' => $userId
+                'updated_by' => $userId,
+                'email_verification_code' => $verificationCode
             );
             $this->db->where('id', $userId);
             $this->db->update('user_registrations', $data);
@@ -238,7 +254,7 @@ class User extends CI_Controller {
             $this->session->set_userdata($arraySessionData);
 
             //redirect to profile page
-            $MSG['Success'] = 'Your Registration is Successful. Welcome to ConnectKarma!';
+            $MSG['Success'] = 'Your Registration is Successful. An email is sent to your email address for verification. <br>Welcome to ConnectKarma!';
 
             $this->load->view('common/header');
             $this->load->view('user/user', $MSG);
@@ -254,22 +270,31 @@ class User extends CI_Controller {
                 $this->load->view('common/footer');
             }
         }
-//                        else {
-//
-//                            $MSG['Error'] = 'Registration Failed';
-//                            $this->load->view('home/register', $MSG);
-//                            $this->load->view('common/footer');
-//                        }
-        //}
-        //}
-        //}
-//            else {
-//
-//                $MSG['Error'] = 'Please select a file to upload';
-//                $this->load->view('home/register', $MSG);
-//                $this->load->view('common/footer');
-//            }
-//        }
+    }
+
+    public function verify($verificationText = NULL) {
+
+        $noRecords = $this->UserModel->verifyEmailAddress($verificationText);
+        if ($noRecords > 0) {
+
+            $MSG['Success'] = 'Your email address verified. Welcome to ConnectKarma!';
+
+            $this->load->view('common/header');
+            $this->load->view('user/user', $MSG);
+            $this->load->view('common/footer');
+        } else {
+
+            $MSG['Error'] = 'Your email address verification code does not match. Please contact Administrator!';
+
+            $this->load->view('common/header');
+            $this->load->view('user/index', $MSG);
+            $this->load->view('common/footer');
+        }
+    }
+
+    public function sendVerificationEmail($userEmail, $verificationCode) {
+
+        $this->EmailModel->sendVerificatinEmail($userEmail, $verificationCode);
     }
 
     public function Logout() {
@@ -285,6 +310,10 @@ class User extends CI_Controller {
         $this->load->view('common/header');
         $this->load->view('home/index');
         $this->load->view('common/footer');
+    }
+
+    public function forgotPassword() {
+        
     }
 
     public function userDetails() {

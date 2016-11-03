@@ -1,6 +1,18 @@
-RewriteEngine on
-RewriteCond $1 !^(index\.php|img|css|js|robots\.txt|favicon\.ico)
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php?/$1 [L] 
+#RewriteEngine on
+#RewriteCond $1 !^(index\.php|img|css|js|robots\.txt|favicon\.ico)
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ index.php?/$1 [L] 
 
+<IfModule mod_rewrite.c>
+    #DirectoryIndex index.php
+
+    RewriteEngine on
+    #Remove below hash before upload on server
+    #RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond $1 !^(images|user_guide|assets|audio_files|image_files|video_files)
+    RewriteCond $1 !^([^\..]+\.php|robots\.txt)
+    RewriteRule ^(.*)$ /ckfirst/index.php?/$1 [L]
+</IfModule>

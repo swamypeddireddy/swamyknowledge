@@ -16,10 +16,10 @@
 
                     <div class="social_login">
                         <ul>
-                            <li class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></li>
-                            <li class="tw"><i class="fa fa-twitter" aria-hidden="true"></i></li>
-                            <li class="lin"><i class="fa fa-linkedin" aria-hidden="true"></i></li>
-                            <li class="goog"><i class="fa fa-google-plus" aria-hidden="true"></i></li>
+                            <li class="fb"><a href="<?php echo base_url();?>index.php/hauth/login/Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li class="tw"><a href="<?php echo base_url();?>index.php/hauth/login/Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li> 
+                            <li class="lin"><a href="<?php echo base_url();?>index.php/hauth/login/LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+<!--                            <li class="goog"><i class="fa fa-google-plus" aria-hidden="true"></i></li>-->
                         </ul>
                     </div>
 

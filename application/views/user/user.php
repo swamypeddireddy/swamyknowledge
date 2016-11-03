@@ -25,28 +25,44 @@
                         <div class="mentor_user"><a href="profile.html"><span class="mentor_user_img green"><img src="<?php echo base_url('/assets/'); ?>images/user1.png" alt="Hemant"/></span></a>
                             <span class="prf_sm_img"><img src="<?php echo base_url('/assets/'); ?>images/3.png" alt="smiely"/> <img src="<?php echo base_url('/assets/'); ?>images/1.png" alt="nutral"/> <img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad"/></span>
                              <!-- <span class="mentor_txt">Hemant Sakarwal</span>--></div>
-                        <div class="mentor_org"><span class="mentor_org_img yellow"><img src="<?php echo base_url('/assets/'); ?>images/org1.jpg" alt="fiables"/></span>
-                        <span class="prf_sm_img"><img src="<?php echo base_url('/assets/'); ?>images/3.png" alt="smiely"/> <img src="<?php echo base_url('/assets/'); ?>images/1.png" alt="nutral"/> <img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad"/></span> <!-- <span class="mentor_txt">Fiables Offshoring Services Pvt. Ltd.</span>--></div>
+                        <div class="mentor_org">
+<!--                            <span class="mentor_org_img yellow">
+                                <img src="<?php echo base_url('/assets/'); ?>images/org1.jpg" alt="fiables"/>
+                            </span>-->
+                            <span class="prf_sm_img"><img src="<?php echo base_url('/assets/'); ?>images/3.png" alt="smiely"/>
+                                <img src="<?php echo base_url('/assets/'); ?>images/1.png" alt="nutral"/>
+                                <img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad"/>
+                            </span> <!-- <span class="mentor_txt">Fiables Offshoring Services Pvt. Ltd.</span>-->
+                        </div>
                     </div>
 
                     <div class="mentor_information">
                         <div class="mentor_user"><a href="profile.html"><span class="mentor_user_img red"><img src="<?php echo base_url('/assets/'); ?>images/user2.jpg" alt="Hemant"/></span></a>
                         <span class="prf_sm_img"><img src="<?php echo base_url('/assets/'); ?>images/3.png" alt="smiely"/> <img src="<?php echo base_url('/assets/'); ?>images/1.png" alt="nutral"/> <img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad"/></span> <!-- <span class="mentor_txt">Hemant Sakarwal</span>--></div>
-                        <div class="mentor_org"><span class="mentor_org_img white"><img src="<?php echo base_url('/assets/'); ?>images/org2.jpg" alt="fiables"/></span>
+                        <div class="mentor_org">
+<!--                            <span class="mentor_org_img white">
+                                <img src="<?php echo base_url('/assets/'); ?>images/org2.jpg" alt="fiables"/>
+                            </span>-->
                         <span class="prf_sm_img"><img src="<?php echo base_url('/assets/'); ?>images/3.png" alt="smiely"/> <img src="<?php echo base_url('/assets/'); ?>images/1.png" alt="nutral"/> <img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad"/></span> <!-- <span class="mentor_txt">Fiables Offshoring Services Pvt. Ltd.</span>--></div>
                     </div>
 
                     <div class="mentor_information">
                         <div class="mentor_user"><a href="profile.html"><span class="mentor_user_img black"><img src="<?php echo base_url('/assets/'); ?>images/user3.jpeg" alt="Hemant"/></span></a>
                         <span class="prf_sm_img"><img src="<?php echo base_url('/assets/'); ?>images/3.png" alt="smiely"/> <img src="<?php echo base_url('/assets/'); ?>images/1.png" alt="nutral"/> <img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad"/></span> <!-- <span class="mentor_txt">Hemant Sakarwal</span>--></div>
-                        <div class="mentor_org"><span class="mentor_org_img yellow"><img src="<?php echo base_url('/assets/'); ?>images/org3.jpeg" alt="fiables"/></span>
+                        <div class="mentor_org">
+<!--                            <span class="mentor_org_img yellow">
+                                <img src="<?php echo base_url('/assets/'); ?>images/org3.jpeg" alt="fiables"/>
+                            </span>-->
                         <span class="prf_sm_img"><img src="<?php echo base_url('/assets/'); ?>images/3.png" alt="smiely"/> <img src="<?php echo base_url('/assets/'); ?>images/1.png" alt="nutral"/> <img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad"/></span> <!-- <span class="mentor_txt">Fiables Offshoring Services Pvt. Ltd.</span>--></div>
                     </div>
 
                     <div class="mentor_information">
                         <div class="mentor_user"><a href="profile.html"><span class="mentor_user_img red"><img src="<?php echo base_url('/assets/'); ?>images/user4.jpeg" alt="Hemant"/></span></a>
                         <span class="prf_sm_img"><img src="<?php echo base_url('/assets/'); ?>images/3.png" alt="smiely"/> <img src="<?php echo base_url('/assets/'); ?>images/1.png" alt="nutral"/> <img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad"/></span> <!-- <span class="mentor_txt">Hemant Sakarwal</span>--></div>
-                        <div class="mentor_org"><span class="mentor_org_img green"><img src="<?php echo base_url('/assets/'); ?>images/org4.jpg" alt="fiables"/></span>
+                        <div class="mentor_org">
+<!--                            <span class="mentor_org_img green">
+                                <img src="<?php echo base_url('/assets/'); ?>images/org4.jpg" alt="fiables"/>
+                            </span>-->
                         <span class="prf_sm_img"><img src="<?php echo base_url('/assets/'); ?>images/3.png" alt="smiely"/> <img src="<?php echo base_url('/assets/'); ?>images/1.png" alt="nutral"/> <img src="<?php echo base_url('/assets/'); ?>images/2.png" alt="sad"/></span> <!-- <span class="mentor_txt">Fiables Offshoring Services Pvt. Ltd.</span>--></div>
                     </div>
 
@@ -58,8 +74,11 @@
                 <div class="user_prf">
                     <div class="user-profile_txt"><p><b class="font_size">Managing Director</b><br/>
                             <b style="font-size:13px; font-weight:normal;">Fiables Offshoring Services Pvt. Ltd.</b></p>
-                        <p class="new_para">Global Senior Executive with 20+ years of International experience of working in Europe & America for GE, UBS, Computer science JNU Delhi, 1992 B.E, ...</div>
-                    <div class="user-profile_right"><img src="<?php echo base_url('/assets/') ?>images/hemant.jpg" alt="Hemant Sakarwal"/></div>
+                        <p class="new_para">Global Senior Executive with 20+ years of International experience of working in Europe & America for GE, UBS, Computer science JNU Delhi, 1992 B.E, ...</p>
+                    </div>
+<!--                    <div class="user-profile_right">
+                        <img src="<?php echo base_url('/assets/') ?>images/hemant.jpg" alt="Hemant Sakarwal"/>
+                    </div>-->
                 </div>
 
 
