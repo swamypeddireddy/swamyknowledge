@@ -16,7 +16,7 @@
                     <div class="social_login">
                         <ul>
                             <li class="fb" onlogin="checkLoginState();"><i class="fa fa-facebook" aria-hidden="true"></i></li>
-                            <li class="tw"><i class="fa fa-twitter" aria-hidden="true"></i></li>
+                            <li class="tw"><a href="<?php echo base_url();?>hauth/login/Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li> 
                             <li class="lin"><i class="fa fa-linkedin" aria-hidden="true"></i></li>
                             <li class="goog"><i class="fa fa-google-plus" aria-hidden="true"></i></li>
                             

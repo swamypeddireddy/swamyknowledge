@@ -127,53 +127,53 @@ $('.fb').click(function () {
 });
 
 //twitter API
-$('.tw').click(function () {
-
-    alert('twitter login');
-//        $.ajax({
-//            method: "POST",
-//            dataType: "JSON",
-//            url: "https://api.twitter.com/oauth/request_token",
-//            data: {OAuth oauth_nonce="K7ny27JTpKVsTgdyLdDfmQQWVLERj2zAK5BslRsqyw", oauth_callback="http%3A%2F%2Fmyapp.com%3A3005%2Ftwitter%2Fprocess_callback", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1300228849", oauth_consumer_key="OqEqJeafRSF11jBMStrZz", oauth_signature="Pc%2BMLdv028fxCErFyi8KXFM%2BddU%3D", oauth_version="1.0"},
-//        }).done(function (data) {
-//            alert(data);
-//            var URL = data['baseURL'] + data['controller'] + '/' + data['action'];
-//            window.location = URL;
-//        });
-    
-//    (function (d, s, id) {
-//        
-//        //Reading script jquery.min.js
-//        var js, fjs = d.getElementsByTagName(s)[0];
-//        alert(d.getElementsByTagName(s)[0]);
+//$('.tw').click(function () {
 //
-//        if (d.getElementById(id))
-//            return
-//            alert(d.getElementById(id));
-//
-//            js = d.createElement(s);
-//            js.id = id;
-//            js.src = "http://platform.twitter.com/anywhere.js?id=" + 787898701511397376;
-//            fjs.parentNode.insertBefore(js, fjs);
-//        
-//    }(document, "script", 'twitter-anywhere'));
-//
-//
-//    //describe the login actions  
-//    twttr.anywhere(function (T) {
-//        T.bind("authComplete", function (e, user) {
-//            var token = user.attributes._identity;
-//            //define the login function on your client through Twitter  
-//        });
-//    });
-//
-//    //function we link to the click on the custom login button through Twitter  
-//    function doTWSignIn() {
-//        twttr.anywhere(function (T) {
-//            T.signIn();
-//        });
-//    }
-});
+//    alert('twitter login');
+////        $.ajax({
+////            method: "POST",
+////            dataType: "JSON",
+////            url: "https://api.twitter.com/oauth/request_token",
+////            data: {OAuth oauth_nonce="K7ny27JTpKVsTgdyLdDfmQQWVLERj2zAK5BslRsqyw", oauth_callback="http%3A%2F%2Fmyapp.com%3A3005%2Ftwitter%2Fprocess_callback", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1300228849", oauth_consumer_key="OqEqJeafRSF11jBMStrZz", oauth_signature="Pc%2BMLdv028fxCErFyi8KXFM%2BddU%3D", oauth_version="1.0"},
+////        }).done(function (data) {
+////            alert(data);
+////            var URL = data['baseURL'] + data['controller'] + '/' + data['action'];
+////            window.location = URL;
+////        });
+//    
+////    (function (d, s, id) {
+////        
+////        //Reading script jquery.min.js
+////        var js, fjs = d.getElementsByTagName(s)[0];
+////        alert(d.getElementsByTagName(s)[0]);
+////
+////        if (d.getElementById(id))
+////            return
+////            alert(d.getElementById(id));
+////
+////            js = d.createElement(s);
+////            js.id = id;
+////            js.src = "http://platform.twitter.com/anywhere.js?id=" + 787898701511397376;
+////            fjs.parentNode.insertBefore(js, fjs);
+////        
+////    }(document, "script", 'twitter-anywhere'));
+////
+////
+////    //describe the login actions  
+////    twttr.anywhere(function (T) {
+////        T.bind("authComplete", function (e, user) {
+////            var token = user.attributes._identity;
+////            //define the login function on your client through Twitter  
+////        });
+////    });
+////
+////    //function we link to the click on the custom login button through Twitter  
+////    function doTWSignIn() {
+////        twttr.anywhere(function (T) {
+////            T.signIn();
+////        });
+////    }
+//});
 
 //linkedin API
 $('.social_linkedin').click(function () {
