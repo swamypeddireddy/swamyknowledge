@@ -30,7 +30,7 @@ class User extends CI_Controller {
             }
         } elseif (NULL != $_POST) {
             //echo'<pre>';print_r($_POST);echo'</pre>';
-            //if loggedin through social media
+            //if loggedin through social media using facebook
             if (isset($_POST['socialMediaLogin']) && (true == $_POST['socialMediaLogin']) && ('connected' == $_POST['status'])) {
 
                 //fetch social media types
@@ -68,7 +68,7 @@ class User extends CI_Controller {
                             $queryInsertSocialMediaLogin = array(
                                 'social_media_type_id' => $socialMediaTypeData->id,
                                 'social_media_user_id' => $_POST['id'],
-                                'social_media_username' => $_POST['socialMediaLoginName'],
+                                'social_media_username' => $_POST['name'],
                                 'access_token' => $_POST['accessToken'],
                                 'status' => $_POST['status'],
                                 'created_by' => '1',

@@ -15,8 +15,8 @@ class HybridAuthLib extends Hybrid_Auth {
 
 //        echo'<pre>';print_r($ci);echo'</pre>';
 //echo'<pre>';print_r($config);echo'</pre>';exit;
-//        echo 'in construct';
         parent::__construct($config);
+        echo 'in construct';//exit;
         log_message('debug', 'HybridAuthLib Class Initalized');
     }
 
