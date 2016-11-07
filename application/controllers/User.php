@@ -365,7 +365,7 @@ class User extends CI_Controller {
         //echo'logged in twitter';exit;
 //        $CONSUMER_KEY='PkzEK1tvOWCATgyk4R3uvEaWs';
 //        $CONSUMER_SECRET='xqnOCsTLKITYCORsDIQOThjNh9ROXdf4hxekWzd3sJlaxLDBKr';
-//        $OAUTH_CALLBACK='http://172.16.4.126/ckfirst/index.php/User/index';
+//        $OAUTH_CALLBACK='http://localhost/ckfirst/index.php/User/index';
 //
 //        $connection = new TwitterOAuth($CONSUMER_KEY, $CONSUMER_SECRET);
 //        $request_token = $connection->getRequestToken($OAUTH_CALLBACK); //get Request Token

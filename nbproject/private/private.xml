@@ -4,14 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/var/www/html/ckfirst/application/controllers/Hauth.php</file>
-            <file>file:/var/www/html/ckfirst/application/config/hybridauthlib.php</file>
-            <file>file:/var/www/html/ckfirst/applicationtwitter/third_party/hybridauth/Hybrid/Logger.php</file>
+            <file>file:/var/www/html/ckfirst/application/config/constants.php</file>
+            <file>file:/var/www/html/ckfirst/application/controllers/Profile.php</file>
             <file>file:/var/www/html/ckfirst/application/libraries/HybridAuthLib.php</file>
-            <file>file:/var/www/html/ckfirst/applicationtwitter/third_party/hybridauth/Hybrid/Error.php</file>
-            <file>file:/var/www/html/ckfirst/application/views/home/register.php</file>
-            <file>file:/var/www/html/ckfirst/application2/third_party/hybridauth/Hybrid/Logger.php</file>
-            <file>file:/var/www/html/ckfirst/application/controllers/User.php</file>
+            <file>file:/var/www/html/ckfirst/application/third_party/hybridauth/Hybrid/Providers/LinkedIn.php</file>
             <file>file:/var/www/html/ckfirst/application/third_party/hybridauth/Hybrid/Auth.php</file>
+            <file>file:/var/www/html/ckfirst/application/libraries/Linkedin.php</file>
             <file>file:/var/www/html/ckfirst/application/views/home/index.php</file>
         </group>
     </open-files>
