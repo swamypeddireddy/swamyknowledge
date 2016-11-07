@@ -114,7 +114,7 @@ $('.fb').click(function () {
             $.ajax({
                 method: "POST",
                 dataType: "JSON",
-                url: "http://172.16.4.126/ckfirst/index.php/User/",
+                url: "http://localhost/ckfirst/index.php/User/",
                 data: {socialMediaLogin: true, socialMediaLoginName: 'facebook', id: response.id, name: response.name, accessToken: accessToken, status: status},
             }).done(function (data) {
 
