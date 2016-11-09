@@ -69,7 +69,6 @@ class HAuth extends CI_Controller {
                         $queryCheckUserRecord = $this->db->select('*')->from('social_media_logins')->where($arrayWhere)->get()->num_rows();
 
                         //create session
-                        //if ('connected' == $_POST['status']) {
                         $arraySessionData = array(
                             'social_login_status' => 1,
                             'session_userId' => '',
@@ -85,8 +84,7 @@ class HAuth extends CI_Controller {
                         //if not registered in social_media_logins
                         if (false == $queryCheckUserRecord) {
 
-                            //echo'usr not registered, registering user';
-                            //register in social_media_logins
+                            //Register in social_media_logins
                             $queryInsertSocialMediaLogin = array(
                                 'social_media_type_id' => '2',
                                 'social_media_user_id' => $user_profile->identifier,
@@ -98,8 +96,9 @@ class HAuth extends CI_Controller {
                                 'created_on' => 'now()',
                                 'updated_by' => '1'
                             );
-                            $this->db->insert('social_media_logins', $queryInsertSocialMediaLogin);
-                            $socialMediaInsertId = $this->db->insert_id();
+                            if($this->db->insert('social_media_logins', $queryInsertSocialMediaLogin)) {
+                                $socialMediaInsertId = $this->db->insert_id();
+                            }
 
                             //Insert data in user_registrations on login using twitter
                             $queryInsertUserRegistrations = array(
@@ -135,35 +134,9 @@ class HAuth extends CI_Controller {
 //                            $user_profile->region => Jalna, India
 //                            $user_profile->city => 
 //                            $user_profile->zip => 
-                        } elseif (true == $queryCheckUserRecord) {
-                            //if registered in social_media_logins
-                            //                            //fetch user details for registration by social media
-                            //                            $fb = new Facebook\Facebook([
-                            //                                'app_id' => '1740937489503955',
-                            //                                'app_secret' => '846d9c53d7587ebe128de576b8090396',
-                            //                                'default_graph_version' => 'v2.5',
-                            //                            ]);
-                            //
-                    //                            $request    = new FacebookRequest (
-                            //                                $session,
-                            //                                'GET',
-                            //                                $_POST['id']
-                            //                            );
-                            //
-                    //                            $response       = $request->execute();
-                            //                            $graphObject    = $response->getGraphObject();
-                            //                            
-                            //                            echo'</pre>';print_r($graphObject);echo'</pre>';exit;
                         }
 
                         redirect('User/index');
-                        //$this->index();
-//                                            $reponceData = array(
-//                                                'Success' => 'Login Successful using Facebook. Welcome to ConnectKarma!',
-//                                                'baseURL' => base_url() . 'index.php/',
-//                                                'controller' => 'user',
-//                                                'action' => 'facebookLogin'
-//                                            );
                     }
                 } else { // Cannot authenticate user
                     show_error('Cannot authenticate user');

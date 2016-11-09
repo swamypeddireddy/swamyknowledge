@@ -36,7 +36,7 @@
                         <div class="firstname"><input id="repassword" value="" type="password" name="password" placeholder="Re-enter your user password" required></div>
                         <div class="div_MSG_Passwordchk_ERROR"><br><div id="MSG_Passwordchk_ERROR"></div></div>
                         
-                        <div class="firstname">
+                        <div class="firstname scroll">
                             <label class="white_label">Select Group</label>
                             <div class="div_MSG_GROUP_ERROR"><br><div id="MSG_GROUP_ERROR"></div></div>
                             <?php foreach($groups as $key => $group) {

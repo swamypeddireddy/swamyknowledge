@@ -18,8 +18,10 @@
 <!--                            <li class="fb"><a href="<?php echo base_url();?>hauth/login/Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>-->
                             <li class="fb" onlogin="checkLoginState();"><i class="fa fa-facebook" aria-hidden="true"></i></li>
                             <li class="tw"><a href="<?php echo base_url();?>hauth/login/Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li> 
-                            <li class="lin"><a href="<?php echo base_url();?>profile/linkedin_connect"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-<!--                            <li class="lin"><i class="fa fa-linkedin" aria-hidden="true"></i></li>-->
+
+<!--                            <li class="lin"><a href="<?php echo base_url();?>hauth/login/LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>-->
+                            <li class="lin"><i class="fa fa-linkedin" aria-hidden="true"></i></li>
+
                             <li class="goog"><a href="<?php echo base_url();?>hauth/login/Google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                             
 <!--                            <a href="<?php //echo base_url();?>index.php/hauth/login/Twitter"><li class="tw"><i class="fa fa-twitter" aria-hidden="true"></i></li></a>
@@ -37,7 +39,7 @@
                         <div class="firstname"><input type="password" name="password" placeholder="Enter your user password" required></div>
                         <div class="btn_login"><button type="submit" name="" value="" formaction="<?php echo base_url('index.php/User/index');?>">Login</button></div>
                         
-                        <div class="forgot"><a href="<?php echo base_url('index.php/User/forgotPassword');?>">Lost your Password?</a></div>
+                        <div class="forgot"><a href="javascript:void(0);">Lost your Password?</a></div>
                         <div class="register"><a href="<?php echo base_url('index.php/User/register');?>">Signup Here</a></div>
                     </form>
                 </div>
@@ -55,7 +57,6 @@
 
     </div>
 </section>
-
 <script src="<?php echo base_url('/assets/'); ?>js/social_media_login.js"></script>
 <script>
     $("#email").focusout(function () {
@@ -94,5 +95,41 @@
             $('#MSG_Email_ERROR').css('color', 'DarkRed');
             document.getElementById('MSG_Email_ERROR').innerHTML = "You have entered an invalid email address!";
         }
+    });
+    
+    //linkedin API
+    $('.lin').click(function () {
+        alert('linkedin login');
+        //    var response_type  = 'code';
+        //    var client_id      = '78un9sant5o14b';
+        //    var redirect_uri   = 'http://localhost/ckfirst';
+            var state   = Math.random().toString(36).slice(2);
+        //<?php
+//            $mi = "<script type='text/javascript'>state</script>";
+//            $this->session->set_userdata("state", $mi);
+//        ?>
+//            alert(state)
+        //    var scope          = 'r_basicprofile';
+        //    var url            = "https://www.linkedin.com/oauth/v2/authorization";
+            window.location = "https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=78un9sant5o14b&redirect_uri=http%3A%2F%2Flocalhost%2Fckfirst&state="+state+"&scope=r_basicprofile%20r_emailaddress";
+            //window.location = "http://localhost/ckfirst/index.php/User/linkedInLogin";
+    //        $.ajax({
+    //            method: "GET",
+    //            dataType: "JSONP",
+    //            xhrFields: {cors: false},
+    //            url: "https://www.linkedin.com/oauth/v2/authorization",
+    //            crossDomain: true,
+    //            data: {response_type: response_type, client_id: client_id, redirect_uri: redirect_uri, state: state, scope: scope},
+    //        }).done(function (data) {
+    //            alert('result');
+    //            console.log(data);
+    //            //var URL = data['baseURL'] + data['controller'] + '/' + data['action'];
+    //            //window.location = URL;
+    //        });
+
+        //    $.get(url).done(function (data) {
+        //        alert('result');
+        //        console.log(data);
+        //    });
     });
 </script>

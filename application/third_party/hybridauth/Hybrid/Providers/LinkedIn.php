@@ -50,6 +50,7 @@ class Hybrid_Providers_LinkedIn extends Hybrid_Provider_Model
 			Hybrid_Auth::redirect( LINKEDIN::_URL_AUTH . $response['linkedin']['oauth_token'] );
 		}
 		else{
+                    echo'<pre>';print_r($response);echo'</pre>';exit;
 			throw new Exception( "Authentication failed! {$this->providerId} returned an invalid Token.", 5 );
 		}
 	}
@@ -61,6 +62,7 @@ class Hybrid_Providers_LinkedIn extends Hybrid_Provider_Model
 	{
 		$oauth_token    = $_REQUEST['oauth_token'];
 		$oauth_verifier = $_REQUEST['oauth_verifier'];
+                echo'<pre>';print_r($oauth_verifier);echo'</pre>';exit;
 
 		if ( ! $oauth_verifier ){
 			throw new Exception( "Authentication failed! {$this->providerId} returned an invalid Token.", 5 );

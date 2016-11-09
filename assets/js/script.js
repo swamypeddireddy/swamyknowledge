@@ -85,18 +85,17 @@ $(".a_up").click(function(){
 
 /* Mentor Popup Starts */
 
- $(".mentor_popup_show").hover(function(){
+/* $(".mentor_popup_show").hover(function(){
   setTimeout(function(){
     $(".mentor_popup").show()}, 300);
+});*/
+$(".mentor_popup_show").mouseenter(function(){
+	$(".mentor_popup").show();
 });
 
-/* $(function(){
-	$(".mentor_popup_show").hover(function(){
-		$(".mentor_popup").show();
-	}, function(){
-		$(".mentor_popup").hide();
-	});
-});*/
+/* $(".mentor_popup").mouseleave(function(){
+	$(".mentor_popup").hide(); 
+}); */
 
 $(".mentor_popup_close").click(function(){
   $(".mentor_popup").hide();
@@ -149,5 +148,22 @@ $(".user_login_li").mouseleave(function(){
 /* Responsive Menu Ends */
 
 
+/* forgot popup s */
+
+$(".forgot").click(function(){
+	$(".forgot-popup").show();
+});
+
+$(".forgot-popup-close").click(function(){
+	$(".forgot-popup").hide();
+});
+
+/* forgot popup e */
+
+$(".delete").click(function(){
+
+	//$(".user-information .edit_profile_right ul li").hide();
+	
+});
 
 });

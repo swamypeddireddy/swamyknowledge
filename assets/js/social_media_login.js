@@ -1,7 +1,7 @@
 /* 
  * Created By       : Vivek Ausekar
  * Created On       : 18 Oct, 2016
- * File Location    : http://172.16.4.126/connectkarma/assets/js/social_media_login
+ * File Location    : http://localhost/connectkarma/assets/js/social_media_login
  * File Name        : social_media_login
  */
 
@@ -105,17 +105,18 @@ $('.fb').click(function () {
     function testAPI(accessToken, status) {
 
         //console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function (response) {
+        FB.api('/me', {fields: 'id,name,first_name,last_name,email,gender'}, function (response) {
 
             //alert(response.name);
             console.log(response);
             console.log('Successful login for: ' + response.name);
 
             $.ajax({
+                
                 method: "POST",
                 dataType: "JSON",
                 url: "http://localhost/ckfirst/index.php/User/",
-                data: {socialMediaLogin: true, socialMediaLoginName: 'facebook', id: response.id, name: response.name, accessToken: accessToken, status: status},
+                data: {socialMediaLogin: true, socialMediaLoginName: 'facebook', id: response.id, name: response.name, first_name: response.first_name, last_name: response.last_name, email: response.email, gender: response.gender, accessToken: accessToken, status: status},
             }).done(function (data) {
 
                 var URL = data['baseURL'] + data['controller'] + '/' + data['action'];
@@ -127,7 +128,8 @@ $('.fb').click(function () {
 });
 
 //twitter API
-//$('.tw').click(function () {
+$('.tw').click(function () {
+    
 //
 //    alert('twitter login');
 ////        $.ajax({
@@ -173,17 +175,9 @@ $('.fb').click(function () {
 ////            T.signIn();
 ////        });
 ////    }
-//});
-
-//linkedin API
-$('.social_linkedin').click(function () {
-
-    alert('linkedin login');
 });
 
 //google API
 $('.social_google').click(function () {
-
     alert('google login');
 });
-

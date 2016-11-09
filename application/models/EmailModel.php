@@ -10,11 +10,13 @@ class EmailModel extends CI_Model {
     function sendVerificatinEmail($email, $verificationText) {
 
         $config = Array(
-            'protocol' => 'smtp',
-            'smtp_host' => 'localhost',
-            'smtp_port' => 25,
+            'useragent' => "CodeIgniter",
+            'mailpath'  => "/usr/bin/sendmail",
+            'protocol'  => 'smtp',
+            'smtp_host' => 'smtp.gmail.com',
+            'smtp_port' => 465,
             'smtp_user' => 'vivekausekar@gmail.com', // change it to yours
-            'smtp_pass' => 'Soulmate@1', // change it to yours
+            'smtp_pass' => '', // change it to yours
             //'mailtype' => 'html',
             'charset' => 'utf-8',
             'wordwrap' => TRUE,
@@ -27,7 +29,7 @@ class EmailModel extends CI_Model {
 //            //'smtp_port' => 465,
 //            'smtp_port' => 25,
 //            'smtp_user' => 'vivekausekar@gmail.com',
-//            'smtp_pass' => 'Soulmate@1',
+//            'smtp_pass' => '',
 //            'smtp_timeout' => '30',
 //            'mailtype'  => 'html', 
 //            'charset'   => 'iso-8859-1'
@@ -38,7 +40,7 @@ class EmailModel extends CI_Model {
 //        $config['smtp_port']=25;
 //        $config['smtp_timeout']=30;
 //        $config['smtp_user']='vivekausekar@gmail.com';
-//        $config['smtp_pass']='Soulmate@1';
+//        $config['smtp_pass']='';
 //        $config['charset']='utf-8';  
 //        $config['newline']="\r\n";
 

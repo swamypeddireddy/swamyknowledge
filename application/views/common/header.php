@@ -17,10 +17,10 @@
 
         <script src="<?php echo base_url('/assets/'); ?>js/jquery.min.js"></script>
         <script src="<?php echo base_url('/assets/'); ?>js/script.js"></script>
-        <script>
-            var base_url = '<?php echo base_url(); ?>';
+<!--        <script>
+            var base_url = '<?php //echo base_url(); ?>';
             // alert(base_url);
-        </script>
+        </script>-->
     </head>
 
     <body>
@@ -68,6 +68,17 @@
 
                 </div>
         </header>
+
+        <div class="forgot-popup">
+            <div class="forgot-popup-inner">
+                <div class="forgot-popup-close"><i class="fa fa-times-circle" aria-hidden="true" title="Close"></i></div>
+                <form action="">
+                    <p>Enter your E-mail address and we will send you a link to reset your password</p>
+                    <div class="firstname"><input type="email" name="email" placeholder="Enter your Email" required></div>
+                    <button type="submit" name="" value="" formaction="<?php echo base_url('index.php/User/forgotPassword');?>">Submit</button>
+                </form>
+            </div>
+        </div>
 
         <section>
             <!--    Header messges-->
